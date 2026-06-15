@@ -3,860 +3,390 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maria Teresa Hurtado Bunster — Psicología</title>
+<title>María Teresa Hurtado Bunster — Psicóloga Clínica en Las Condes y Online</title>
+<meta name="description" content="Psicóloga clínica en Las Condes (Metro Escuela Militar) y online. Psicoterapia integrativa para adultos que incluye el cuerpo: ansiedad, autoexigencia, crisis, trauma y Somatic Experiencing®. Un espacio seguro para volver a ti.">
+<meta property="og:title" content="María Teresa Hurtado Bunster — Psicóloga Clínica">
+<meta property="og:description" content="Psicoterapia que integra cuerpo, mente y emoción. Las Condes y online. Trabajo somático y regulación del sistema nervioso.">
+<meta property="og:type" content="website">
 
 <style>
   /* ---------- Halenoir ---------- */
-  @font-face {
-    font-family: 'Halenoir Text';
-    src: url('fonts/HalenoirCompactText-Light.otf') format('opentype');
-    font-weight: 300; font-style: normal; font-display: swap;
-  }
-  @font-face {
-    font-family: 'Halenoir Text';
-    src: url('fonts/HalenoirCompactText-Regular.otf') format('opentype');
-    font-weight: 400; font-style: normal; font-display: swap;
-  }
-  @font-face {
-    font-family: 'Halenoir Text';
-    src: url('fonts/HalenoirCompactText-Medium.otf') format('opentype');
-    font-weight: 500; font-style: normal; font-display: swap;
-  }
-  @font-face {
-    font-family: 'Halenoir Text';
-    src: url('fonts/HalenoirCompactText-DemiBold.otf') format('opentype');
-    font-weight: 600; font-style: normal; font-display: swap;
-  }
-  @font-face {
-    font-family: 'Halenoir Text';
-    src: url('fonts/HalenoirCompactText-Bold.otf') format('opentype');
-    font-weight: 700; font-style: normal; font-display: swap;
-  }
-  @font-face {
-    font-family: 'Halenoir Display';
-    src: url('fonts/Halenoir-DemiBold.otf') format('opentype');
-    font-weight: 600; font-style: normal; font-display: swap;
-  }
-  @font-face {
-    font-family: 'Halenoir Display';
-    src: url('fonts/Halenoir-Bold.otf') format('opentype');
-    font-weight: 700; font-style: normal; font-display: swap;
-  }
+  @font-face { font-family:'Halenoir Text'; src:url('fonts/HalenoirCompactText-Light.otf') format('opentype'); font-weight:300; font-style:normal; font-display:swap; }
+  @font-face { font-family:'Halenoir Text'; src:url('fonts/HalenoirCompactText-Regular.otf') format('opentype'); font-weight:400; font-style:normal; font-display:swap; }
+  @font-face { font-family:'Halenoir Text'; src:url('fonts/HalenoirCompactText-Medium.otf') format('opentype'); font-weight:500; font-style:normal; font-display:swap; }
+  @font-face { font-family:'Halenoir Text'; src:url('fonts/HalenoirCompactText-DemiBold.otf') format('opentype'); font-weight:600; font-style:normal; font-display:swap; }
+  @font-face { font-family:'Halenoir Text'; src:url('fonts/HalenoirCompactText-Bold.otf') format('opentype'); font-weight:700; font-style:normal; font-display:swap; }
+  @font-face { font-family:'Halenoir Display'; src:url('fonts/Halenoir-DemiBold.otf') format('opentype'); font-weight:600; font-style:normal; font-display:swap; }
+  @font-face { font-family:'Halenoir Display'; src:url('fonts/Halenoir-Bold.otf') format('opentype'); font-weight:700; font-style:normal; font-display:swap; }
 
   /* ---------- tokens ---------- */
   :root{
-    --ink: #0B0B0B;
-    --ink-soft: #2A2A2A;
-    --mute: #6E6E6E;
-    --mute-2: #9A9A9A;
-    --hair: #E6E6E6;
-    --hair-soft: #EFEFEF;
-    --wash: #F3F3F2;          /* very light gray band */
-    --paper: #FFFFFF;
-    --gutter: clamp(24px, 5vw, 72px);
-    --max: 1440px;
-    --nav-h: 88px;
-    --font-sans: 'Halenoir Text', 'Halenoir Display', ui-sans-serif, -apple-system, system-ui, 'Helvetica Neue', Arial, sans-serif;
-    --font-display: 'Halenoir Display', 'Halenoir Text', ui-sans-serif, system-ui, sans-serif;
+    --ink:#16130F;
+    --ink-soft:#3A352F;
+    --mute:#6E675E;
+    --mute-2:#A39A8D;
+    --hair:#E7E1D8;
+    --hair-soft:#F0EBE3;
+    --wash:#F6F2EC;          /* warm off-white band */
+    --paper:#FFFFFF;
+    --peach:#F0A285;
+    --lilac:#C2A6D6;
+    --sky:#8FA8E0;
+    --accent:#C77B62;        /* warm terracotta for small text accents */
+    --grad: linear-gradient(120deg, #F2A98C 0%, #C9A7D6 52%, #8FA9E0 100%);
+    --gutter: clamp(22px, 5vw, 72px);
+    --max:1440px;
+    --nav-h:88px;
+    --font-sans:'Halenoir Text','Halenoir Display',ui-sans-serif,-apple-system,system-ui,'Helvetica Neue',Arial,sans-serif;
+    --font-display:'Halenoir Display','Halenoir Text',ui-sans-serif,system-ui,sans-serif;
   }
 
-  *{ box-sizing: border-box; }
-  html{ scroll-behavior: smooth; }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:auto; scroll-padding-top:var(--nav-h); }
   body{
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--font-sans);
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--font-sans); font-weight:400; font-size:16px; line-height:1.55;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
   }
-
-  ::selection{ background: var(--ink); color: var(--paper); }
-
-  a{ color: inherit; text-decoration: none; }
-  button{ font-family: inherit; }
+  ::selection{ background:var(--ink); color:var(--paper); }
+  a{ color:inherit; text-decoration:none; }
+  button{ font-family:inherit; }
+  img{ display:block; max-width:100%; }
 
   /* ---------- Nav ---------- */
   .nav{
-    position: fixed;
-    inset: 0 0 auto 0;
-    height: var(--nav-h);
-    z-index: 50;
-    background: rgba(255,255,255,0.82);
-    backdrop-filter: saturate(180%) blur(14px);
-    -webkit-backdrop-filter: saturate(180%) blur(14px);
-    border-bottom: 1px solid transparent;
-    transition: border-color .3s ease, background .3s ease;
+    position:fixed; inset:0 0 auto 0; height:var(--nav-h); z-index:50;
+    background:rgba(255,255,255,0.80);
+    backdrop-filter:saturate(180%) blur(14px); -webkit-backdrop-filter:saturate(180%) blur(14px);
+    border-bottom:1px solid transparent; transition:border-color .3s ease, background .3s ease;
   }
-  .nav.is-scrolled{
-    border-bottom-color: var(--hair);
-    background: rgba(255,255,255,0.94);
-  }
+  .nav.is-scrolled{ border-bottom-color:var(--hair); background:rgba(255,255,255,0.93); }
   .nav__inner{
-    max-width: var(--max);
-    margin: 0 auto;
-    height: 100%;
-    padding: 0 var(--gutter);
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 32px;
+    max-width:var(--max); margin:0 auto; height:100%; padding:0 var(--gutter);
+    display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:32px;
   }
-  .logo{
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-  }
-  .logo__name{
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 17px;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    white-space: nowrap;
-  }
-  .logo__sub{
-    font-size: 13px;
-    color: var(--mute);
-    font-weight: 400;
-    letter-spacing: 0.01em;
-    margin-top: 2px;
-  }
-  .nav__rule{
-    height: 1px;
-    background: var(--ink);
-    opacity: 0.85;
-    margin: 0 12px;
-    transform: scaleY(1);
-  }
-  .nav__links{
-    display: flex;
-    align-items: center;
-    gap: 28px;
-  }
-  .nav__toggle{
-    display: none;
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--ink);
-    border-radius: 999px;
-    background: transparent;
-    cursor: pointer;
-    padding: 0;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 4px;
-    transition: background .2s ease;
-  }
-  .nav__toggle span{
-    display: block;
-    width: 14px;
-    height: 1.5px;
-    background: var(--ink);
-    transition: transform .25s ease, opacity .2s ease;
-  }
-  .nav__toggle.is-open{ background: var(--ink); }
-  .nav__toggle.is-open span{ background: var(--paper); }
-  .nav__toggle.is-open span:nth-child(1){ transform: translateY(2.75px) rotate(45deg); }
-  .nav__toggle.is-open span:nth-child(2){ transform: translateY(-2.75px) rotate(-45deg); }
+  .logo{ display:flex; flex-direction:column; line-height:1.1; }
+  .logo__name{ font-family:var(--font-display); font-weight:700; font-size:17px; letter-spacing:-0.01em; color:var(--ink); white-space:nowrap; }
+  .logo__sub{ font-size:13px; color:var(--mute); font-weight:400; letter-spacing:0.01em; margin-top:2px; }
+  .nav__rule{ height:1px; background:var(--ink); opacity:0.85; margin:0 12px; }
+  .nav__links{ display:flex; align-items:center; gap:28px; }
   .nav__link{
-    font-size: 13.5px;
-    font-weight: 500;
-    color: var(--ink);
-    letter-spacing: 0.01em;
-    position: relative;
-    padding: 6px 0;
-    transition: opacity .2s ease;
+    font-size:13.5px; font-weight:500; color:var(--ink); letter-spacing:0.01em;
+    position:relative; padding:6px 0; transition:opacity .2s ease;
   }
-  .nav__link::after{
-    content: '';
-    position: absolute;
-    left: 0; right: 100%;
-    bottom: 2px;
-    height: 1px;
-    background: var(--ink);
-    transition: right .3s ease;
+  .nav__link::after{ content:''; position:absolute; left:0; right:100%; bottom:2px; height:1px; background:var(--ink); transition:right .3s ease; }
+  .nav__link:hover::after{ right:0; }
+  .nav__cta{
+    display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:999px;
+    background:var(--ink); color:var(--paper); font-size:13px; font-weight:500;
+    transition:transform .2s ease, background .2s ease;
   }
-  .nav__link:hover::after{ right: 0; }
+  .nav__cta::after{ display:none; }
+  .nav__cta:hover{ transform:translateY(-1px); background:#2a241d; }
+  .nav__toggle{
+    display:none; width:40px; height:40px; border:1px solid var(--ink); border-radius:999px;
+    background:transparent; cursor:pointer; padding:0; align-items:center; justify-content:center;
+    flex-direction:column; gap:4px; transition:background .2s ease;
+  }
+  .nav__toggle span{ display:block; width:14px; height:1.5px; background:var(--ink); transition:transform .25s ease, opacity .2s ease; }
+  .nav__toggle.is-open{ background:var(--ink); }
+  .nav__toggle.is-open span{ background:var(--paper); }
+  .nav__toggle.is-open span:nth-child(1){ transform:translateY(2.75px) rotate(45deg); }
+  .nav__toggle.is-open span:nth-child(2){ transform:translateY(-2.75px) rotate(-45deg); }
 
   /* ---------- Layout helpers ---------- */
-  .container{
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: 0 var(--gutter);
+  .container{ max-width:var(--max); margin:0 auto; padding:0 var(--gutter); }
+  .grid-12{ display:grid; grid-template-columns:repeat(12,1fr); gap:24px; }
+  .eyebrow{
+    font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); font-weight:500;
+    display:inline-flex; align-items:center; gap:10px;
   }
-  .grid-12{
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 24px;
-  }
+  .eyebrow::before{ content:''; width:22px; height:1px; background:var(--accent); display:inline-block; }
 
   /* ---------- Hero ---------- */
-  .hero{
-    padding-top: calc(var(--nav-h) + 80px);
-    padding-bottom: 140px;
-  }
-  .hero .grid-12{ align-items: end; }
-  .hero__eyebrow{
-    grid-column: 1 / span 5;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    padding-bottom: 8px;
-  }
-  .hero__num{
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    color: var(--mute);
-  }
-  .hero__principle{
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    padding-bottom: 4px;
-  }
+  .hero{ padding-top:calc(var(--nav-h) + 64px); padding-bottom:96px; position:relative; }
+  .hero .grid-12{ align-items:center; }
+  .hero__body{ grid-column:1 / span 7; display:flex; flex-direction:column; gap:30px; }
+  .hero__kicker{ display:flex; flex-direction:column; gap:16px; }
   .hero__principle-k{
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink);
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--ink);
-    width: fit-content;
+    font-family:var(--font-display); font-weight:700; font-size:11px; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--accent); display:inline-flex; align-items:center; gap:10px;
   }
-  .hero__principle-v{
-    margin: 0;
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(15px, 1.2vw, 17px);
-    line-height: 1.45;
-    letter-spacing: -0.005em;
-    color: var(--ink);
-    max-width: 32ch;
-    text-wrap: balance;
-  }
-  .hero__meta{
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    font-size: 13px;
-    color: var(--mute);
-  }
-  .hero__meta b{
-    color: var(--ink);
-    font-weight: 500;
-  }
-  .hero__body{
-    grid-column: 6 / span 7;
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
-  }
+  .hero__principle-k::before{ content:''; width:22px; height:1px; background:var(--accent); }
   h1.hero__headline{
-    margin: 0;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(32px, 4.4vw, 60px);
-    line-height: 1.04;
-    letter-spacing: -0.025em;
-    color: var(--ink);
-    text-wrap: balance;
+    margin:0; font-family:var(--font-display); font-weight:700;
+    font-size:clamp(34px,4.6vw,62px); line-height:1.02; letter-spacing:-0.027em; color:var(--ink); text-wrap:balance;
   }
   h1.hero__headline em{
-    font-style: normal;
-    color: var(--mute-2);
-    font-weight: 400;
+    font-style:normal; font-weight:700;
+    background:var(--grad); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
   }
-  .hero__lede{
-    max-width: 520px;
-    font-size: 16px;
-    line-height: 1.65;
-    color: var(--mute);
-    font-weight: 400;
+  .hero__lede{ max-width:540px; font-size:16.5px; line-height:1.65; color:var(--mute); font-weight:400; }
+  .hero__cta-row{ display:flex; align-items:center; gap:22px; margin-top:6px; flex-wrap:wrap; }
+  .hero__meta{ display:flex; flex-wrap:wrap; gap:8px 28px; margin-top:10px; font-size:13px; color:var(--mute); }
+  .hero__meta span{ display:inline-flex; align-items:center; gap:8px; }
+  .hero__meta b{ color:var(--ink); font-weight:500; }
+  .hero__meta span::before{ content:''; width:5px; height:5px; border-radius:50%; background:var(--peach); }
+
+  .hero__figure{ grid-column:9 / span 4; position:relative; }
+  .hero__figure-img{
+    width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:200px 200px 28px 28px; display:block;
+    box-shadow:0 30px 70px -30px rgba(120,90,70,0.45); background:#e9e2da;
   }
-  .hero__cta-row{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-top: 4px;
+  .hero__figure::after{
+    content:''; position:absolute; inset:-12% -16% -8% -16%; z-index:-1;
+    background:radial-gradient(60% 50% at 50% 40%, rgba(242,169,140,0.30), rgba(143,168,224,0.10) 60%, transparent 75%);
+    filter:blur(8px);
   }
 
   /* ---------- Buttons ---------- */
   .btn{
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 22px;
-    font-size: 13.5px;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    border-radius: 999px;
-    border: 1px solid var(--ink);
-    background: var(--ink);
-    color: var(--paper);
-    cursor: pointer;
-    transition: background .2s ease, color .2s ease, transform .2s ease;
+    display:inline-flex; align-items:center; gap:10px; padding:14px 24px; font-size:13.5px;
+    font-weight:500; letter-spacing:0.01em; border-radius:999px; border:1px solid var(--ink);
+    background:var(--ink); color:var(--paper); cursor:pointer;
+    transition:background .2s ease, color .2s ease, transform .2s ease;
   }
-  .btn:hover{ background: #1d1d1d; transform: translateY(-1px); }
-  .btn--ghost{
-    background: transparent;
-    color: var(--ink);
-    border-color: var(--ink);
-  }
-  .btn--ghost:hover{ background: var(--ink); color: var(--paper); }
-  .btn--link{
-    border: 0;
-    background: transparent;
-    color: var(--ink);
-    padding: 0;
-    border-radius: 0;
-  }
-  .btn--link::after{
-    content: '→';
-    display: inline-block;
-    transition: transform .2s ease;
-  }
-  .btn--link:hover::after{ transform: translateX(4px); }
-  .btn .arrow{
-    display: inline-block;
-    transition: transform .2s ease;
-  }
-  .btn:hover .arrow{ transform: translate(3px, -3px); }
+  .btn:hover{ background:#2a241d; transform:translateY(-1px); }
+  .btn--wa{ background:#1f8f5f; border-color:#1f8f5f; }
+  .btn--wa:hover{ background:#1a7d53; }
+  .btn--ghost{ background:transparent; color:var(--ink); }
+  .btn--ghost:hover{ background:var(--ink); color:var(--paper); }
+  .btn--link{ border:0; background:transparent; color:var(--ink); padding:0; border-radius:0; }
+  .btn--link::after{ content:'→'; display:inline-block; transition:transform .2s ease; }
+  .btn--link:hover::after{ transform:translateX(4px); }
+  .btn .arrow{ display:inline-block; transition:transform .2s ease; }
+  .btn:hover .arrow{ transform:translate(3px,-3px); }
 
-  /* ---------- Image band ---------- */
-  .imageband{
-    width: 100%;
-    height: clamp(280px, 42vh, 460px);
-    overflow: hidden;
-    position: relative;
-    background: #c9c9c9;
-  }
-  .imageband__img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 55%;
-    display: block;
-  }
+  /* ---------- Image band (reflejo del agua) ---------- */
+  .imageband{ width:100%; height:clamp(300px,46vh,500px); overflow:hidden; position:relative; background:#dcd6cf; }
+  .imageband__img{ width:100%; height:100%; object-fit:cover; object-position:center 55%; }
   .imageband__caption{
-    position: absolute;
-    left: var(--gutter);
-    bottom: 20px;
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.85);
-    mix-blend-mode: difference;
-    font-weight: 500;
+    position:absolute; left:var(--gutter); bottom:22px; font-size:11px; letter-spacing:0.16em;
+    text-transform:uppercase; color:rgba(255,255,255,0.9); mix-blend-mode:difference; font-weight:500;
   }
 
   /* ---------- Divider strip ---------- */
-  .strip{
-    background: var(--wash);
-    padding: 44px 0;
-  }
-  .strip__inner{
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .strip__label{
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--mute);
-    font-weight: 500;
-  }
+  .strip{ background:var(--wash); padding:54px 0; }
+  .strip__inner{ display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+  .strip__label{ font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); font-weight:500; }
   .strip__quote{
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(18px, 1.8vw, 24px);
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    max-width: 780px;
-    text-wrap: balance;
+    font-family:var(--font-display); font-weight:600; font-size:clamp(19px,2vw,27px);
+    letter-spacing:-0.015em; color:var(--ink); max-width:880px; text-wrap:balance; line-height:1.3; margin:0;
   }
+  .strip__quote cite{ display:block; font-family:var(--font-sans); font-style:normal; font-weight:500; font-size:14px; color:var(--mute); margin-top:14px; letter-spacing:0; }
 
   /* ---------- Section framework ---------- */
-  .section{ padding: 140px 0; }
-  .section--tight{ padding: 100px 0; }
-
-  .section__head{
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 24px;
-    margin-bottom: 72px;
-  }
+  .section{ padding:128px 0; }
+  .section__head{ display:grid; grid-template-columns:repeat(12,1fr); gap:24px; margin-bottom:64px; }
   .section__label{
-    grid-column: 1 / span 3;
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--mute);
-    font-weight: 500;
+    grid-column:1 / span 3; display:flex; align-items:baseline; gap:10px;
+    font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); font-weight:500;
   }
-  .section__label span:first-child{
-    font-family: var(--font-display);
-    color: var(--ink);
-    font-weight: 700;
-  }
+  .section__label span:first-child{ font-family:var(--font-display); color:var(--accent); font-weight:700; }
   .section__title{
-    grid-column: 4 / span 9;
-    margin: 0;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(28px, 3.2vw, 44px);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    text-wrap: balance;
+    grid-column:4 / span 9; margin:0; font-family:var(--font-display); font-weight:700;
+    font-size:clamp(28px,3.2vw,44px); line-height:1.1; letter-spacing:-0.02em; color:var(--ink); text-wrap:balance;
   }
-  .section__title em{
-    font-style: normal;
-    color: var(--mute-2);
-    font-weight: 400;
-  }
+  .section__title em{ font-style:normal; color:var(--mute-2); font-weight:400; }
 
   /* ---------- Servicios ---------- */
-  .services{
-    border-top: 1px solid var(--hair);
+  .services{ border-top:1px solid var(--hair); }
+  .services__grid{ display:grid; grid-template-columns:repeat(2,1fr); column-gap:72px; }
+  .service{ padding:48px 0; border-bottom:1px solid var(--hair); display:flex; gap:26px; }
+  .services__grid .service:nth-child(odd){ padding-right:36px; }
+  .services__grid .service:nth-child(even){ padding-left:48px; border-left:1px solid var(--hair); }
+  .services__grid .service:nth-last-child(-n+2){ border-bottom:none; padding-bottom:0; }
+  .services__grid .service:nth-child(-n+2){ padding-top:0; }
+  .service__icon{ width:64px; height:64px; border-radius:16px; flex:0 0 64px; object-fit:cover; box-shadow:0 8px 22px -12px rgba(120,90,70,0.5); }
+  .service__body{ display:flex; flex-direction:column; gap:13px; }
+  .service__title{ font-family:var(--font-display); font-weight:700; font-size:22px; letter-spacing:-0.01em; color:var(--ink); margin:0; }
+  .service__desc{ font-size:15px; line-height:1.62; color:var(--mute); margin:0; }
+  .service__tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
+  .tag{ font-size:11.5px; letter-spacing:0.03em; color:var(--ink-soft); padding:5px 11px; border:1px solid var(--hair); border-radius:999px; }
+
+  /* ---------- Enfoque (cuerpo / sistema nervioso) ---------- */
+  .enfoque{ background:var(--wash); }
+  .enfoque__grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:24px; align-items:start; }
+  .enfoque__media{ grid-column:1 / span 5; position:relative; }
+  .enfoque__img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:24px; box-shadow:0 24px 60px -28px rgba(120,90,70,0.5); }
+  .enfoque__body{ grid-column:7 / span 6; display:flex; flex-direction:column; gap:26px; }
+  .enfoque__lede{
+    font-family:var(--font-display); font-weight:600; font-size:clamp(20px,2vw,26px);
+    line-height:1.32; letter-spacing:-0.015em; color:var(--ink); margin:0; text-wrap:pretty;
   }
-  .services__grid{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 80px;
-    row-gap: 0;
+  .enfoque__para{ font-size:16px; line-height:1.7; color:var(--ink-soft); margin:0; }
+  .enfoque__pull{
+    font-family:var(--font-display); font-weight:600; font-size:18px; line-height:1.4; color:var(--ink);
+    padding:22px 26px; border-radius:18px; background:var(--paper); border:1px solid var(--hair);
+    margin:4px 0; text-wrap:pretty;
   }
-  .service{
-    display: grid;
-    grid-template-columns: 48px 1fr;
-    gap: 32px;
-    padding: 56px 0;
-    border-bottom: 1px solid var(--hair);
-    position: relative;
-  }
-  .services__grid .service:nth-child(odd){
-    padding-right: 40px;
-  }
-  .services__grid .service:nth-child(even){
-    padding-left: 40px;
-    border-left: 1px solid var(--hair);
-  }
-  .services__grid .service:nth-last-child(-n+2){
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  .services__grid .service:nth-child(-n+2){
-    padding-top: 0;
-  }
-  .service__num{
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 13px;
-    color: var(--mute);
-    letter-spacing: 0.08em;
-    padding-top: 6px;
-  }
-  .service__body{
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  .service__title{
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    margin: 0;
-  }
-  .service__desc{
-    font-size: 15px;
-    line-height: 1.6;
-    color: var(--mute);
-    max-width: 46ch;
-    margin: 0;
-  }
-  .service__tags{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 6px;
-  }
-  .tag{
-    font-size: 11.5px;
-    letter-spacing: 0.04em;
-    color: var(--ink-soft);
-    padding: 5px 10px;
-    border: 1px solid var(--hair);
-    border-radius: 999px;
-  }
+  .enfoque__pull span{ color:var(--accent); }
+  .signs{ display:flex; flex-direction:column; gap:0; margin-top:4px; }
+  .signs__k{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--mute); margin-bottom:8px; }
+  .sign{ font-size:15px; color:var(--ink-soft); padding:11px 0; border-top:1px solid var(--hair); display:flex; align-items:center; gap:12px; }
+  .sign:first-of-type{ border-top:none; }
+  .sign::before{ content:''; width:6px; height:6px; border-radius:50%; background:var(--grad); flex:0 0 6px; }
 
   /* ---------- Bio ---------- */
-  .bio{
-    background: var(--paper);
-  }
-  .bio__grid{
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 24px;
-  }
+  .bio__grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:24px; }
   .bio__label{
-    grid-column: 1 / span 3;
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--mute);
-    font-weight: 500;
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
+    grid-column:1 / -1; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute);
+    font-weight:500; display:flex; align-items:baseline; gap:10px;
   }
-  .bio__label span:first-child{
-    font-family: var(--font-display);
-    color: var(--ink);
-    font-weight: 700;
+  .bio__label span:first-child{ font-family:var(--font-display); color:var(--accent); font-weight:700; }
+  .bio__portrait{ grid-column:1 / span 3; }
+  .portrait{
+    width:100%; aspect-ratio:4/5; border-radius:20px; object-fit:cover;
+    box-shadow:0 24px 60px -30px rgba(120,90,70,0.5);
   }
-  .bio__body{
-    grid-column: 4 / span 6;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+  .portrait-ph{
+    width:100%; aspect-ratio:4/5; border-radius:20px;
+    background:linear-gradient(150deg,#F3D9C9,#D9CCE6 55%,#C7D2F0);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+    color:#fff; text-align:center; padding:20px;
   }
+  .portrait-ph b{ font-family:var(--font-display); font-weight:700; font-size:15px; }
+  .portrait-ph small{ font-size:12px; opacity:.9; max-width:22ch; line-height:1.4; }
+  .bio__body{ grid-column:5 / span 8; display:flex; flex-direction:column; gap:24px; }
   .bio__lede{
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(22px, 2.1vw, 28px);
-    line-height: 1.3;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-    margin: 0;
-    text-wrap: pretty;
+    font-family:var(--font-display); font-weight:600; font-size:clamp(21px,2vw,27px);
+    line-height:1.3; letter-spacing:-0.015em; color:var(--ink); margin:0; text-wrap:pretty;
   }
-  .bio__para{
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--ink-soft);
-    margin: 0;
-    max-width: 62ch;
-  }
-  .bio__facts{
-    grid-column: 11 / span 2;
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-    padding-top: 6px;
-  }
-  .bio__fact{
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .bio__fact-k{
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--mute);
-  }
-  .bio__fact-v{
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 14px;
-    color: var(--ink);
-  }
-  .bio__sep{
-    grid-column: 1 / -1;
-    height: 1px;
-    background: var(--hair);
-    margin: 56px 0 0;
-  }
-  .bio__creds{
-    grid-column: 4 / span 9;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
-    margin-top: 56px;
-  }
-  .cred__label{
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--mute);
-    margin-bottom: 12px;
-  }
-  .cred__item{
-    font-size: 14.5px;
-    line-height: 1.5;
-    color: var(--ink-soft);
-    padding: 10px 0;
-    border-top: 1px solid var(--hair-soft);
-  }
-  .cred__item:first-of-type{ border-top: 1px solid var(--hair); }
+  .bio__para{ font-size:15.5px; line-height:1.7; color:var(--ink-soft); margin:0; }
+  .bio__sep{ grid-column:1 / -1; height:1px; background:var(--hair); margin:60px 0 0; }
+  .bio__creds{ grid-column:4 / span 9; display:grid; grid-template-columns:repeat(3,1fr); gap:48px; margin-top:52px; }
+  .cred__label{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:12px; font-weight:600; }
+  .cred__item{ font-size:14px; line-height:1.5; color:var(--ink-soft); padding:11px 0; border-top:1px solid var(--hair-soft); }
+  .cred__item:first-of-type{ border-top:1px solid var(--hair); }
+  .bio__facts{ grid-column:1 / span 3; display:flex; flex-direction:column; gap:24px; margin-top:24px; }
+  .bio__fact{ display:flex; flex-direction:column; gap:3px; }
+  .bio__fact-k{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--mute); }
+  .bio__fact-v{ font-family:var(--font-display); font-weight:600; font-size:15px; color:var(--ink); }
+
+  /* ---------- FAQ ---------- */
+  .faq{ border-top:1px solid var(--hair); }
+  .faq__grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:24px; }
+  .faq__head{ grid-column:1 / span 4; }
+  .faq__head .eyebrow{ margin-bottom:18px; }
+  .faq__head h2{ font-family:var(--font-display); font-weight:700; font-size:clamp(26px,2.6vw,36px); line-height:1.1; letter-spacing:-0.02em; margin:0; text-wrap:balance; }
+  .faq__list{ grid-column:6 / span 7; }
+  .faq__item{ border-top:1px solid var(--hair); padding:26px 0; }
+  .faq__item:last-child{ border-bottom:1px solid var(--hair); }
+  .faq__q{ font-family:var(--font-display); font-weight:600; font-size:18px; color:var(--ink); margin:0 0 10px; letter-spacing:-0.01em; }
+  .faq__a{ font-size:15px; line-height:1.65; color:var(--mute); margin:0; }
+  .faq__book{ width:108px; height:108px; object-fit:contain; margin-top:32px; }
 
   /* ---------- Contacto ---------- */
-  .contact{
-    border-top: 1px solid var(--hair);
-    padding: 160px 0 120px;
-  }
-  .contact__inner{
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 24px;
-    align-items: end;
-  }
-  .contact__text{
-    grid-column: 1 / span 7;
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
-  }
-  .contact__eyebrow{
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--mute);
-    font-weight: 500;
-  }
+  .contact{ background:var(--ink); color:#F4EFE8; padding:120px 0; }
+  .contact__inner{ display:grid; grid-template-columns:repeat(12,1fr); gap:24px; align-items:start; }
+  .contact__text{ grid-column:1 / span 7; display:flex; flex-direction:column; gap:32px; }
+  .contact__eyebrow{ font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--peach); font-weight:500; display:inline-flex; align-items:center; gap:10px; }
+  .contact__eyebrow::before{ content:''; width:22px; height:1px; background:var(--peach); }
   .contact__title{
-    margin: 0;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(36px, 5vw, 72px);
-    line-height: 1;
-    letter-spacing: -0.03em;
-    color: var(--ink);
-    text-wrap: balance;
+    margin:0; font-family:var(--font-display); font-weight:700; font-size:clamp(34px,4.6vw,64px);
+    line-height:1.02; letter-spacing:-0.03em; color:#FBF8F3; text-wrap:balance;
   }
-  .contact__title em{
-    font-style: normal;
-    color: var(--mute-2);
-    font-weight: 400;
-  }
-  .contact__email{
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(20px, 2vw, 26px);
-    color: var(--ink);
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 8px;
-    width: fit-content;
-    letter-spacing: -0.01em;
-  }
-  .contact__email:hover{ opacity: .7; }
-  .contact__aside{
-    grid-column: 9 / span 4;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    padding-bottom: 12px;
-  }
-  .contact__meta{
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-  .contact__row{
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding: 14px 0;
-    border-top: 1px solid var(--hair);
-  }
-  .contact__row:last-child{ border-bottom: 1px solid var(--hair); }
-  .contact__k{
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--mute);
-  }
-  .contact__v{
-    font-size: 14.5px;
-    color: var(--ink);
-    font-weight: 500;
-  }
-  .contact__cta{
-    margin-top: 8px;
-  }
+  .contact__title em{ font-style:normal; font-weight:700; background:var(--grad); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .contact__lede{ font-size:16px; line-height:1.65; color:#C9C1B6; max-width:46ch; margin:0; }
+  .contact__cta-row{ display:flex; gap:16px; flex-wrap:wrap; }
+  .contact .btn--ghost{ color:#F4EFE8; border-color:rgba(244,239,232,0.4); }
+  .contact .btn--ghost:hover{ background:#F4EFE8; color:var(--ink); border-color:#F4EFE8; }
+  .contact__aside{ grid-column:9 / span 4; display:flex; flex-direction:column; }
+  .contact__row{ display:flex; flex-direction:column; gap:4px; padding:18px 0; border-top:1px solid rgba(244,239,232,0.16); }
+  .contact__row:last-child{ border-bottom:1px solid rgba(244,239,232,0.16); }
+  .contact__k{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--peach); }
+  .contact__v{ font-size:15px; color:#F4EFE8; font-weight:500; }
+  .contact__v small{ display:block; font-size:12.5px; color:#A79E92; font-weight:400; margin-top:3px; letter-spacing:0; }
 
   /* ---------- Footer ---------- */
-  .footer{
-    border-top: 1px solid var(--hair);
-    padding: 32px 0 40px;
-  }
-  .footer__inner{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-    font-size: 12px;
-    color: var(--mute);
-    letter-spacing: 0.02em;
-  }
-  .footer__inner a:hover{ color: var(--ink); }
+  .footer{ background:var(--ink); color:#9b9286; padding:8px 0 44px; }
+  .footer__inner{ display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; font-size:12px; letter-spacing:0.02em; border-top:1px solid rgba(244,239,232,0.12); padding-top:28px; }
+  .footer__inner a:hover{ color:#F4EFE8; }
 
   /* ---------- Reveal ---------- */
-  .reveal{
-    opacity: 0;
-    transform: translateY(14px);
-    transition: opacity .8s ease, transform .8s ease;
-  }
-  .reveal.is-in{
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .reveal{ opacity:0; transform:translateY(14px); transition:opacity .8s ease, transform .8s ease; }
+  .reveal.is-in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion:reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
 
   /* ---------- Responsive ---------- */
-  @media (max-width: 900px){
-    :root{ --nav-h: 64px; }
-    .nav__inner{ grid-template-columns: 1fr auto; gap: 12px; }
-    .nav__rule{ display: none; }
-    .logo__sub{ display: block; font-size: 11px; }
-    .logo__name{ font-size: 15px; white-space: nowrap; }
-    .logo{ min-width: 0; overflow: hidden; }
-
-    /* Hamburger replaces inline links */
-    .nav__toggle{ display: inline-flex; }
+  @media (max-width:1000px){
+    .hero__body{ grid-column:1 / span 7; }
+    .hero__figure{ grid-column:8 / span 5; }
+    .enfoque__media{ grid-column:1 / span 5; }
+    .enfoque__body{ grid-column:6 / span 7; }
+  }
+  @media (max-width:860px){
+    :root{ --nav-h:64px; }
+    .nav__inner{ grid-template-columns:1fr auto; gap:12px; }
+    .nav__rule{ display:none; }
+    .logo__sub{ display:block; font-size:11px; }
+    .logo__name{ font-size:15px; }
+    .logo{ min-width:0; overflow:hidden; }
+    .nav__toggle{ display:inline-flex; }
     .nav__links{
-      position: fixed;
-      top: var(--nav-h);
-      right: 0;
-      left: 0;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0;
-      background: var(--paper);
-      border-bottom: 1px solid var(--hair);
-      padding: 8px var(--gutter) 24px;
-      transform: translateY(-12px);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .25s ease, transform .25s ease;
+      position:fixed; top:var(--nav-h); right:0; left:0; flex-direction:column; align-items:flex-start; gap:0;
+      background:var(--paper); border-bottom:1px solid var(--hair); padding:8px var(--gutter) 24px;
+      transform:translateY(-12px); opacity:0; pointer-events:none; transition:opacity .25s ease, transform .25s ease;
     }
-    .nav__links.is-open{
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-    .nav__link{
-      width: 100%;
-      padding: 18px 0;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 22px;
-      letter-spacing: -0.01em;
-      border-bottom: 1px solid var(--hair-soft);
-    }
-    .nav__link:last-child{ border-bottom: 0; }
-    .nav__link::after{ display: none; }
-    body.nav-open{ overflow: hidden; }
+    .nav__links.is-open{ opacity:1; transform:translateY(0); pointer-events:auto; }
+    .nav__link{ width:100%; padding:18px 0; font-family:var(--font-display); font-weight:700; font-size:21px; letter-spacing:-0.01em; border-bottom:1px solid var(--hair-soft); }
+    .nav__link::after{ display:none; }
+    .nav__cta{ width:100%; justify-content:center; margin-top:14px; padding:15px; font-size:15px; }
+    body.nav-open{ overflow:hidden; }
 
-    .hero{ padding-top: calc(var(--nav-h) + 48px); padding-bottom: 80px; }
-    .hero__eyebrow{ grid-column: 1 / -1; margin-bottom: 24px; }
-    .hero__body{ grid-column: 1 / -1; }
-    .section{ padding: 80px 0; }
-    .section__head{ margin-bottom: 40px; }
-    .section__label{ grid-column: 1 / -1; margin-bottom: 8px; }
-    .section__title{ grid-column: 1 / -1; }
-    .services__grid{ grid-template-columns: 1fr; column-gap: 0; }
-    .services__grid .service{
-      padding: 32px 0 !important;
-      border-left: 0 !important;
-      border-bottom: 1px solid var(--hair) !important;
-    }
-    .services__grid .service:last-child{ border-bottom: 0 !important; }
-    .bio__label, .bio__body, .bio__facts, .bio__creds{ grid-column: 1 / -1; }
-    .bio__body, .bio__creds{ margin-top: 20px; }
-    .bio__creds{ grid-template-columns: 1fr; gap: 24px; }
-    .contact__text, .contact__aside{ grid-column: 1 / -1; }
-    .contact{ padding: 96px 0 72px; }
+    .hero{ padding-top:calc(var(--nav-h) + 40px); padding-bottom:64px; }
+    .hero .grid-12{ gap:40px; }
+    .hero__body{ grid-column:1 / -1; order:2; }
+    .hero__figure{ grid-column:1 / span 7; order:1; }
+    .hero__figure-img{ aspect-ratio:16/11; border-radius:140px 140px 24px 24px; }
+    .section{ padding:78px 0; }
+    .section__head{ margin-bottom:38px; }
+    .section__label{ grid-column:1 / -1; margin-bottom:6px; }
+    .section__title{ grid-column:1 / -1; }
+    .services__grid{ grid-template-columns:1fr; column-gap:0; }
+    .services__grid .service{ padding:30px 0 !important; border-left:0 !important; border-bottom:1px solid var(--hair) !important; }
+    .services__grid .service:last-child{ border-bottom:0 !important; }
+    .enfoque__media{ grid-column:1 / -1; max-width:420px; }
+    .enfoque__body{ grid-column:1 / -1; }
+    .bio__label{ grid-column:1 / -1; margin-bottom:8px; }
+    .bio__portrait{ grid-column:1 / span 6; }
+    .bio__body{ grid-column:1 / -1; margin-top:8px; }
+    .bio__facts{ grid-column:1 / -1; flex-direction:row; flex-wrap:wrap; gap:28px; margin-top:32px; }
+    .bio__creds{ grid-column:1 / -1; grid-template-columns:1fr; gap:28px; margin-top:36px; }
+    .faq__head{ grid-column:1 / -1; margin-bottom:24px; }
+    .faq__list{ grid-column:1 / -1; }
+    .contact__text, .contact__aside{ grid-column:1 / -1; }
+    .contact__aside{ margin-top:16px; }
+    .contact{ padding:78px 0; }
   }
-
-  @media (max-width: 720px){
-  }
-  @media (max-width: 460px){
-    :root{ --gutter: 18px; }
-    .logo__name{ font-size: 13px; }
-    .logo__sub{ font-size: 10px; margin-top: 1px; }
-  }
-
-  /* ---------- Tweaks panel ---------- */
-  .tweaks{
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 100;
-    width: 280px;
-    background: var(--paper);
-    border: 1px solid var(--ink);
-    border-radius: 14px;
-    padding: 18px 18px 16px;
-    font-family: var(--font-sans);
-    display: none;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-  }
-  .tweaks.is-open{ display: block; }
-  .tweaks__head{
-    display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 14px;
-  }
-  .tweaks__title{
-    font-family: var(--font-display);
-    font-weight: 700; font-size: 13px; letter-spacing: 0.02em;
-  }
-  .tweaks__close{
-    background: transparent; border: 0; cursor: pointer;
-    font-size: 16px; color: var(--ink); padding: 4px;
-  }
-  .tweak-row{
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 10px 0; border-top: 1px solid var(--hair-soft);
-    font-size: 12px; color: var(--ink-soft);
-  }
-  .tweak-row:first-of-type{ border-top: 0; }
-  .tweak-row label{ letter-spacing: 0.04em; }
-  .tweak-row input[type="range"]{ width: 120px; accent-color: var(--ink); }
-  .tweak-row select{
-    font-family: inherit; font-size: 12px; padding: 4px 6px;
-    border: 1px solid var(--hair); border-radius: 6px; background: var(--paper);
+  @media (max-width:460px){
+    :root{ --gutter:18px; }
+    .logo__name{ font-size:13px; }
+    .logo__sub{ font-size:10px; margin-top:1px; }
+    .hero__cta-row .btn{ width:100%; justify-content:center; }
+    .bio__portrait{ grid-column:1 / -1; max-width:280px; }
   }
 </style>
 </head>
-<body data-screen-label="Maria Teresa Hurtado — Home">
+<body data-screen-label="María Teresa Hurtado — Home">
 
   <!-- =================== NAV =================== -->
   <nav class="nav" id="nav" aria-label="Principal">
     <div class="nav__inner">
-      <a class="logo" href="#top" aria-label="Maria Teresa Hurtado Bunster">
-        <span class="logo__name">Maria Teresa Hurtado Bunster</span>
+      <a class="logo" href="#top" aria-label="María Teresa Hurtado Bunster">
+        <span class="logo__name">María Teresa Hurtado Bunster</span>
         <span class="logo__sub">Psicología clínica</span>
       </a>
       <div class="nav__rule" aria-hidden="true"></div>
       <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
-        <span></span>
-        <span></span>
+        <span></span><span></span>
       </button>
       <div class="nav__links" id="navLinks">
-        <a class="nav__link" href="#bio">Bio</a>
         <a class="nav__link" href="#servicios">Servicios</a>
-        <a class="nav__link" href="#agendar">Agendar</a>
-        <a class="nav__link" href="#contacto">Contacto</a>
+        <a class="nav__link" href="#enfoque">Enfoque</a>
+        <a class="nav__link" href="#bio">Bio</a>
+        <a class="nav__link" href="#faq">Preguntas</a>
+        <a class="nav__cta" href="#contacto">Agendar</a>
       </div>
     </div>
   </nav>
@@ -867,52 +397,46 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container">
         <div class="grid-12">
-          <div class="hero__eyebrow reveal">
-            <div class="hero__principle">
-              <span class="hero__principle-k">Un principio</span>
-              <p class="hero__principle-v">
-                La terapia comienza cuando dejamos de explicarnos y empezamos a escucharnos.
-              </p>
-            </div>
-            <div class="hero__meta">
-              <span><b>Consulta presencial</b> · Providencia, Santiago</span>
-              <span><b>Sesiones online</b> · Chile y en español</span>
-              <span>Reg. Colegio de Psicólogos de Chile</span>
-            </div>
-          </div>
           <div class="hero__body reveal">
+            <div class="hero__kicker">
+              <span class="hero__principle-k">Volver a ti</span>
+            </div>
             <h1 class="hero__headline" id="hero-title">
-              Acompañamiento psicoterapéutico enfocado en el <em>bienestar integral</em> y el <em>autodescubrimiento</em>.
+              Psicoterapia que integra <em>cuerpo, mente y emoción</em> para volver a ti.
             </h1>
             <p class="hero__lede">
-              Un espacio reservado para pensar, sentir y ordenar lo que cuesta poner en palabras.
-              Trabajo desde un enfoque clínico integrativo — atento a lo cotidiano, a la historia
-              y a los vínculos que nos forman.
+              Un espacio seguro, empático y sin juicio para quienes sienten que algo ya no calza —
+              ansiedad, autoexigencia, crisis, trauma o el deseo de conocerse más profundamente.
+              Trabajo desde una mirada integrativa que incluye el cuerpo como vía de regulación y cambio.
             </p>
             <div class="hero__cta-row">
-              <a class="btn" href="#agendar">
-                Agendar primera sesión
+              <a class="btn btn--wa" href="https://wa.me/56982349282?text=Hola%20Tere%2C%20me%20gustar%C3%ADa%20agendar%20una%20primera%20sesi%C3%B3n." target="_blank" rel="noopener">
+                Escríbeme por WhatsApp
                 <span class="arrow" aria-hidden="true">↗</span>
               </a>
-              <a class="btn btn--link" href="#servicios">Ver servicios</a>
+              <a class="btn btn--link" href="#servicios">Ver cómo trabajo</a>
             </div>
+            <div class="hero__meta">
+              <span><b>Presencial</b> · Las Condes, Metro Escuela Militar</span>
+              <span><b>Online</b> · Chile y en español</span>
+            </div>
+          </div>
+          <div class="hero__figure reveal">
+            <video class="hero__figure-img" src="images/humano2.mp4" poster="images/hero-figura.png"
+                   autoplay muted loop playsinline aria-label="Figura humana abstracta en tonos cálidos que evoca la integración entre cuerpo y mente"></video>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =================== IMAGE BAND =================== -->
-    <section class="imageband" aria-hidden="true" style="height: 312px">
-      <img class="imageband__img" src="images/ripple.jpg" alt="" style="height: 312px">
-    </section>
-
-    <!-- =================== WASH STRIP =================== -->
-    <section class="strip" aria-hidden="false">
+    <!-- =================== STRIP =================== -->
+    <section class="strip">
       <div class="container">
         <div class="strip__inner">
           <div class="strip__label">Encuadre</div>
           <p class="strip__quote">
-            La terapia no promete certezas — ofrece un modo más amable de estar con las propias preguntas.
+            «La seguridad no es la ausencia de amenaza, sino la presencia de conexión.»
+            <cite>Stephen Porges · Teoría Polivagal</cite>
           </p>
         </div>
       </div>
@@ -922,69 +446,78 @@
     <section class="section services" id="servicios" aria-labelledby="serv-title">
       <div class="container">
         <header class="section__head reveal">
-          <div class="section__label"><span>02</span><span>Servicios</span></div>
+          <div class="section__label"><span>01</span><span>Servicios</span></div>
           <h2 class="section__title" id="serv-title">
-            Cuatro líneas de trabajo, una misma mirada — <em>clínica, rigurosa y humana.</em>
+            Cuatro maneras de acompañarte — <em>todas desde una escucha con cuerpo y presencia.</em>
           </h2>
         </header>
 
         <div class="services__grid">
           <article class="service reveal">
-            <div class="service__num">01</div>
+            <img class="service__icon" src="images/ic-individual.png" alt="">
             <div class="service__body">
-              <h3 class="service__title">Psicoterapia Adultos</h3>
+              <h3 class="service__title">Psicoterapia Individual</h3>
               <p class="service__desc">
-                Proceso individual de mediano y largo plazo para ansiedad, ánimo, sentido y
-                autoconocimiento. Sesiones semanales, presenciales u online.
+                Un proceso para quienes sienten que algo ya no calza. Pronto aparece un lugar seguro
+                donde desplegar la vulnerabilidad: se despierta el propio observador, se despierta el
+                cuerpo, se reconocen patrones automáticos y se abren nuevas posibilidades. Una escucha
+                genuina, compasiva y sin juicio.
               </p>
               <div class="service__tags">
                 <span class="tag">Individual</span>
-                <span class="tag">50 min</span>
-                <span class="tag">Semanal</span>
+                <span class="tag">60 min</span>
+                <span class="tag">Trabajo corporal</span>
               </div>
             </div>
           </article>
 
           <article class="service reveal">
-            <div class="service__num">02</div>
+            <img class="service__icon" src="images/ic-somatico.png" alt="">
             <div class="service__body">
-              <h3 class="service__title">Gestión Emocional</h3>
+              <h3 class="service__title">Trabajo Somático · Somatic Experiencing®</h3>
               <p class="service__desc">
-                Herramientas concretas para reconocer, nombrar y regular estados
-                emocionales. Útil frente a estrés, sobrecarga laboral y períodos de desborde.
+                Las experiencias difíciles también se alojan en el cuerpo, que a veces sigue
+                funcionando como si el peligro continuara presente. A través del trabajo somático
+                acompañamos al sistema nervioso a salir de la alerta, de a poco y de forma segura,
+                recuperando presencia y capacidad de respuesta.
               </p>
               <div class="service__tags">
-                <span class="tag">Focalizado</span>
-                <span class="tag">8–12 sesiones</span>
+                <span class="tag">Sistema nervioso</span>
+                <span class="tag">Regulación</span>
+                <span class="tag">Trauma</span>
               </div>
             </div>
           </article>
 
           <article class="service reveal">
-            <div class="service__num">03</div>
+            <img class="service__icon" src="images/ic-ondas.png" alt="">
             <div class="service__body">
               <h3 class="service__title">Crisis y Transiciones</h3>
               <p class="service__desc">
-                Acompañamiento en duelos, cambios laborales, maternidad, rupturas y
-                momentos vitales que requieren sostén y reorganización interna.
+                Acompañamiento en duelos, rupturas, maternidad, cambios laborales, cambio de país
+                o enfermedad — momentos que requieren sostén y reorganización interna. Mi formación
+                en trauma es un aliado clave para sostener estos procesos con seguridad y a tu ritmo.
               </p>
               <div class="service__tags">
-                <span class="tag">Corto plazo</span>
-                <span class="tag">Intensivo</span>
+                <span class="tag">Contención</span>
+                <span class="tag">A tu ritmo</span>
+                <span class="tag">Trauma</span>
               </div>
             </div>
           </article>
 
           <article class="service reveal">
-            <div class="service__num">04</div>
+            <img class="service__icon" src="images/ic-vinculos.png" alt="">
             <div class="service__body">
               <h3 class="service__title">Vínculos y Relaciones</h3>
               <p class="service__desc">
-                Trabajo sobre patrones relacionales, apego, familia de origen y
-                dinámicas de pareja — desde la propia historia hacia el vínculo actual.
+                Trabajo individual sobre patrones relacionales, apego y familia de origen — desde tu
+                propia historia hacia el vínculo actual, incluida la pareja. No es terapia de pareja:
+                es un espacio para entender y transformar tu manera de vincularte.
               </p>
               <div class="service__tags">
                 <span class="tag">Individual</span>
+                <span class="tag">Apego</span>
                 <span class="tag">Relacional</span>
               </div>
             </div>
@@ -993,43 +526,81 @@
       </div>
     </section>
 
+    <!-- =================== ENFOQUE =================== -->
+    <section class="section enfoque" id="enfoque" aria-labelledby="enf-title">
+      <div class="container">
+        <div class="enfoque__grid reveal">
+          <div class="enfoque__media">
+            <img class="enfoque__img" src="images/ic-sonido.png" alt="Ondas que evocan la regulación del sistema nervioso">
+          </div>
+          <div class="enfoque__body">
+            <div class="eyebrow">El cuerpo en la terapia</div>
+            <h2 class="enfoque__lede" id="enf-title">
+              La regulación no está en tu pensamiento: está en tu capacidad de percibir tu estado interno.
+            </h2>
+            <p class="enfoque__para">
+              No se trata de forzar procesos, sino de acompañar al sistema nervioso a recuperar
+              seguridad, presencia y capacidad de respuesta. Se aprende conciencia corporal —
+              registrar lo que sucede en el cuerpo aquí y ahora. Es cuando el cuerpo se siente
+              seguro que volvemos a fluir, sosteniendo de manera más adaptativa lo que vivimos.
+            </p>
+            <p class="enfoque__pull">
+              «El trauma no es lo que te pasó, es lo que pasó dentro de ti como resultado de lo que
+              te pasó.» <span>Cualquier experiencia que para ti fue demasiado, muy intensa o muy
+              rápida puede ser constitutiva de trauma.</span>
+            </p>
+            <div class="signs">
+              <div class="signs__k">Señales con las que muchas personas se identifican</div>
+              <div class="sign">Ansiedad o sensación de estar en constante tensión</div>
+              <div class="sign">Hipervigilancia y dificultad para relajarse</div>
+              <div class="sign">Cansancio extremo, sin causa aparente</div>
+              <div class="sign">Nudo en el pecho o el estómago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- =================== BIO =================== -->
     <section class="section bio" id="bio" aria-labelledby="bio-title">
       <div class="container">
         <div class="bio__grid reveal">
-          <div class="bio__label" id="bio-title"><span>03</span><span>Bio</span></div>
+          <div class="bio__label" id="bio-title"><span>02</span><span>Bio</span></div>
+
+          <div class="bio__portrait">
+            <img class="portrait" src="images/retrato.jpg" alt="María Teresa Hurtado Bunster"
+                 onerror="this.outerHTML='&lt;div class=&quot;portrait-ph&quot;&gt;&lt;b&gt;Tu foto aquí&lt;/b&gt;&lt;small&gt;Sube images/retrato.jpg para mostrar tu retrato&lt;/small&gt;&lt;/div&gt;'">
+          </div>
 
           <div class="bio__body">
             <p class="bio__lede">
-              Soy psicóloga clínica. Mi trabajo se construye sobre la confianza, la escucha
-              atenta y un enfoque integrativo que se adapta a cada persona y a cada momento.
+              Soy psicóloga clínica. Mi trabajo se construye sobre la confianza, la escucha atenta
+              y un enfoque integrativo que incluye el cuerpo como parte del proceso.
             </p>
             <p class="bio__para">
-              Me formé en la Universidad Diego Portaes y continué mi formación
-              de posgrado en psicoterapia con un énfasis en enfoques dinámicos y sistémicos.
-              A lo largo de más de una década he acompañado procesos en consulta privada, en
-              instituciones de salud mental y en contextos de intervención breve.
+              Desde los 15 años supe que quería estudiar psicología — me movía el deseo de ayudar a
+              otros y una curiosidad profunda por lo transformador. Con los años entendí que era
+              también una mezcla de sensibilidad, de las partes difíciles de mi propia historia y de
+              unas ganas enormes de aprender de lo profundo.
             </p>
             <p class="bio__para">
-              Creo en una clínica honesta: sin fórmulas ni promesas, centrada en la relación
-              terapéutica como principal vehículo de cambio. Cada proceso se diseña en diálogo
-              con quien consulta, respetando sus tiempos, su lenguaje y sus preguntas.
+              Mi estilo es cercano y acogedor, pero también directo. Acompaño el ritmo de quien
+              consulta sin perder de vista aquello que lo trajo, abierta a lo que vaya surgiendo.
+              Trabajo con el cuerpo, entro con curiosidad, y aparecen también el humor y la
+              psicoeducación cuando son pertinentes.
+            </p>
+            <p class="bio__para">
+              Creo en una clínica honesta: el cambio no es llegar a un estado sin problemas, sino
+              recuperar la propia capacidad de autorregulación — poder vivir la experiencia sin
+              quedar atrapada en ella. Esa regulación no siempre está en la historia; también está
+              en el cuerpo.
             </p>
           </div>
 
           <aside class="bio__facts">
-            <div class="bio__fact">
-              <span class="bio__fact-k">Años en consulta</span>
-              <span class="bio__fact-v">12+</span>
-            </div>
-            <div class="bio__fact">
-              <span class="bio__fact-k">Enfoque</span>
-              <span class="bio__fact-v">Integrativo</span>
-            </div>
-            <div class="bio__fact">
-              <span class="bio__fact-k">Idiomas</span>
-              <span class="bio__fact-v">ES · EN</span>
-            </div>
+            <div class="bio__fact"><span class="bio__fact-k">Atiende</span><span class="bio__fact-v">Adultos · 20+</span></div>
+            <div class="bio__fact"><span class="bio__fact-k">Enfoque</span><span class="bio__fact-v">Integrativo · Somático</span></div>
+            <div class="bio__fact"><span class="bio__fact-k">Idiomas</span><span class="bio__fact-v">ES · EN</span></div>
           </aside>
 
           <div class="bio__sep"></div>
@@ -1037,21 +608,66 @@
           <div class="bio__creds">
             <div>
               <div class="cred__label">Formación</div>
-              <div class="cred__item">Psicología, Pontificia Universidad Católica de Chile</div>
-              <div class="cred__item">Magíster en Psicoterapia</div>
-              <div class="cred__item">Diplomado en Terapia Sistémica</div>
+              <div class="cred__item">Psicología, Universidad Diego Portales</div>
+              <div class="cred__item">Postítulo en Psicodiagnóstico con Pruebas Proyectivas, P. Universidad Católica de Chile</div>
+              <div class="cred__item">Magíster en Psicología Dinámica aplicada al diagnóstico e intervención, Universidad de Barcelona</div>
             </div>
             <div>
-              <div class="cred__label">Experiencia</div>
-              <div class="cred__item">Consulta privada, 2014 — presente</div>
-              <div class="cred__item">Centro de Salud Mental,</div>
-              <div class="cred__item"></div>
+              <div class="cred__label">Especialización corporal</div>
+              <div class="cred__item">Somatic Experiencing® — certificación internacional, Año 2 en curso</div>
+              <div class="cred__item">Terapia MindBody, Escuela Rama (México)</div>
+              <div class="cred__item">Sanación de Trauma, formación con Vilma Bustos</div>
             </div>
             <div>
-              <div class="cred__label">Membresías</div>
-              <div class="cred__item">Colegio de Psicólogos de Chile</div>
-              <div class="cred__item">Sociedad Chilena de Psicoterapia</div>
-              <div class="cred__item">Registro Nacional de Prestadores</div>
+              <div class="cred__label">Áreas de trabajo</div>
+              <div class="cred__item">Regulación emocional · ansiedad y estrés crónico</div>
+              <div class="cred__item">Trauma, experiencias adversas y dificultades de apego</div>
+              <div class="cred__item">Conciencia corporal e integración cuerpo-emoción</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== FAQ =================== -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="faq__grid reveal">
+          <div class="faq__head">
+            <div class="eyebrow">Antes de escribir</div>
+            <h2 id="faq-title">Algunas preguntas frecuentes</h2>
+            <img class="faq__book" src="images/ic-libro.png" alt="">
+          </div>
+          <div class="faq__list">
+            <div class="faq__item">
+              <p class="faq__q">¿Cómo es una primera sesión?</p>
+              <p class="faq__a">
+                Es un primer encuentro para empezar a conocernos. Podrás compartir qué te trae a este
+                espacio y, sobre todo, sentir por ti mismo/a si es un lugar donde te sientes cómodo/a
+                para iniciar un proceso. Sin compromiso.
+              </p>
+            </div>
+            <div class="faq__item">
+              <p class="faq__q">¿Cuántas sesiones voy a necesitar?</p>
+              <p class="faq__a">
+                Depende — se ve caso a caso. Algunos procesos son breves y focalizados; otros, de
+                mediano o largo plazo. Lo conversamos y lo ajustamos a lo que tú necesitas.
+              </p>
+            </div>
+            <div class="faq__item">
+              <p class="faq__q">¿Cómo sé si un psicólogo es bueno para mí?</p>
+              <p class="faq__a">
+                Que sea alguien recomendado ayuda, pero la mayor respuesta la tienes tú: cómo te
+                sientes en ese espacio terapéutico. La recomendación y tu propia sensación son los
+                principales filtros.
+              </p>
+            </div>
+            <div class="faq__item">
+              <p class="faq__q">¿Atiendes presencial u online?</p>
+              <p class="faq__a">
+                Ambos. Las sesiones presenciales son en Las Condes (Metro Escuela Militar),
+                preferentemente en la mañana; las tardes las reservo para sesiones online en todo Chile.
+              </p>
             </div>
           </div>
         </div>
@@ -1063,85 +679,58 @@
       <div class="container">
         <div class="contact__inner reveal" id="agendar">
           <div class="contact__text">
-            <div class="contact__eyebrow">04 — Contacto</div>
+            <div class="contact__eyebrow">Contacto</div>
             <h2 class="contact__title" id="contact-title">
-              Escríbeme para agendar <em>una primera conversación.</em>
+              Demos el primer paso — <em>una primera conversación.</em>
             </h2>
-            <a class="contact__email" href="mailto:contacto@teresahurtado.cl">
-              contacto@teresahurtado.cl
-              <span aria-hidden="true" style="font-weight:400;">↗</span>
-            </a>
-            <div>
-              <a class="btn contact__cta" href="mailto:contacto@teresahurtado.cl?subject=Agendar%20primera%20sesi%C3%B3n">
-                Agendar primera sesión
+            <p class="contact__lede">
+              La forma más fácil de llegar a mí es por WhatsApp. Escríbeme y vemos juntos un horario
+              para conocernos. Respondo dentro de 48 horas hábiles.
+            </p>
+            <div class="contact__cta-row">
+              <a class="btn btn--wa" href="https://wa.me/56982349282?text=Hola%20Tere%2C%20me%20gustar%C3%ADa%20agendar%20una%20primera%20sesi%C3%B3n." target="_blank" rel="noopener">
+                Escríbeme por WhatsApp
                 <span class="arrow" aria-hidden="true">↗</span>
               </a>
+              <a class="btn btn--ghost" href="mailto:contacto@teresahurtado.cl">Prefiero email</a>
             </div>
           </div>
 
           <aside class="contact__aside">
-            <div class="contact__meta">
-              <div class="contact__row">
-                <span class="contact__k">Consulta</span>
-                <span class="contact__v">Av. Providencia, Santiago</span>
-              </div>
-              <div class="contact__row">
-                <span class="contact__k">Modalidad</span>
-                <span class="contact__v">Presencial · Online</span>
-              </div>
-              <div class="contact__row">
-                <span class="contact__k">Respuesta</span>
-                <span class="contact__v">Dentro de 48 hrs hábiles</span>
-              </div>
+            <div class="contact__row">
+              <span class="contact__k">Sesión</span>
+              <span class="contact__v">60 minutos · $60.000<small>Valor preferencial caso a caso, si de verdad lo necesitas.</small></span>
+            </div>
+            <div class="contact__row">
+              <span class="contact__k">Consulta</span>
+              <span class="contact__v">Las Condes<small>Metro Escuela Militar</small></span>
+            </div>
+            <div class="contact__row">
+              <span class="contact__k">Horarios</span>
+              <span class="contact__v">Mañanas presencial<small>Tardes online · Chile y en español</small></span>
             </div>
           </aside>
         </div>
       </div>
     </section>
 
+    <!-- =================== IMAGE BAND (reflejo del agua) =================== -->
+    <section class="imageband" aria-label="Reflejos de luz sobre el agua">
+      <img class="imageband__img" src="images/ripple.jpg" alt="Reflejos de luz sobre el agua en movimiento">
+    </section>
+
     <!-- =================== FOOTER =================== -->
     <footer class="footer">
       <div class="container">
         <div class="footer__inner">
-          <span>© 2026 Maria Teresa Hurtado Bunster</span>
-          <span>Santiago de Chile</span>
+          <span>© 2026 María Teresa Hurtado Bunster · Psicóloga Clínica</span>
+          <span>Las Condes, Santiago de Chile · Reg. Colegio de Psicólogos de Chile</span>
           <a href="mailto:contacto@teresahurtado.cl">contacto@teresahurtado.cl</a>
         </div>
       </div>
     </footer>
 
   </main>
-
-  <!-- =================== TWEAKS =================== -->
-  <div class="tweaks" id="tweaks" role="dialog" aria-label="Tweaks">
-    <div class="tweaks__head">
-      <div class="tweaks__title">Tweaks</div>
-      <button class="tweaks__close" id="tweaksClose" aria-label="Cerrar">✕</button>
-    </div>
-    <div class="tweak-row">
-      <label for="t-headline">Headline style</label>
-      <select id="t-headline">
-        <option value="mixed">Mixed weight</option>
-        <option value="solid">Solid black</option>
-        <option value="outline">Outlined</option>
-      </select>
-    </div>
-    <div class="tweak-row">
-      <label for="t-scale">Headline size</label>
-      <input type="range" id="t-scale" min="0.85" max="1.25" step="0.05" value="1">
-    </div>
-    <div class="tweak-row">
-      <label for="t-density">Section spacing</label>
-      <input type="range" id="t-density" min="0.7" max="1.4" step="0.05" value="1">
-    </div>
-    <div class="tweak-row">
-      <label for="t-strip">Wash strip</label>
-      <select id="t-strip">
-        <option value="show">Show</option>
-        <option value="hide">Hide</option>
-      </select>
-    </div>
-  </div>
 
 <script>
   /* ---------- Nav scroll state ---------- */
@@ -1150,7 +739,7 @@
     if (window.scrollY > 12) nav.classList.add('is-scrolled');
     else nav.classList.remove('is-scrolled');
   };
-  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('scroll', onScroll, { passive:true });
   onScroll();
 
   /* ---------- Mobile menu ---------- */
@@ -1159,7 +748,7 @@
   const closeMenu = () => {
     navToggle.classList.remove('is-open');
     navLinks.classList.remove('is-open');
-    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-expanded','false');
     document.body.classList.remove('nav-open');
   };
   navToggle.addEventListener('click', () => {
@@ -1169,75 +758,56 @@
     document.body.classList.toggle('nav-open', isOpen);
   });
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) closeMenu();
+  window.addEventListener('resize', () => { if (window.innerWidth > 860) closeMenu(); });
+
+  /* ---------- Smooth, eased anchor scrolling ---------- */
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const easeInOutCubic = t => t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2;
+  const navH = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 80;
+
+  const softScrollTo = (targetY, duration = 950) => {
+    const startY = window.pageYOffset;
+    const dist = targetY - startY;
+    if (Math.abs(dist) < 4) return;
+    let startT = null;
+    const step = (ts) => {
+      if (startT === null) startT = ts;
+      const p = Math.min((ts - startT) / duration, 1);
+      window.scrollTo(0, startY + dist * easeInOutCubic(p));
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const id = link.getAttribute('href');
+      if (!id || id === '#') return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      if (link.closest('#navLinks')) closeMenu();
+      const top = target === document.getElementById('top')
+        ? 0
+        : target.getBoundingClientRect().top + window.pageYOffset - navH() - 8;
+      if (prefersReduced) { window.scrollTo(0, top); return; }
+      softScrollTo(top);
+      history.replaceState(null, '', id);
+    });
   });
+
+  /* ---------- Respeta reduce-motion en el video del hero ---------- */
+  const heroVid = document.querySelector('.hero__figure-img');
+  if (heroVid && heroVid.tagName === 'VIDEO' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    heroVid.removeAttribute('autoplay');
+    heroVid.pause();
+  }
 
   /* ---------- Reveal on scroll ---------- */
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting){
-        e.target.classList.add('is-in');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  /* ---------- Tweaks ---------- */
-  const tweaks = document.getElementById('tweaks');
-  const tweaksClose = document.getElementById('tweaksClose');
-
-  const applyHeadline = (v) => {
-    const h1 = document.querySelector('h1.hero__headline');
-    const h2 = document.querySelector('.contact__title');
-    [h1, h2].forEach(el => {
-      if (!el) return;
-      el.querySelectorAll('em').forEach(em => {
-        if (v === 'solid'){ em.style.color = 'var(--ink)'; em.style.fontWeight = '700'; }
-        else if (v === 'outline'){
-          em.style.color = 'transparent';
-          em.style.webkitTextStroke = '1.2px var(--ink)';
-          em.style.fontWeight = '700';
-        } else {
-          em.style.color = ''; em.style.fontWeight = ''; em.style.webkitTextStroke = '';
-        }
-      });
-    });
-  };
-  const applyScale = (v) => {
-    document.documentElement.style.setProperty('--hero-scale', v);
-    const h1 = document.querySelector('h1.hero__headline');
-    if (h1) h1.style.fontSize = `clamp(${32*v}px, ${4.4*v}vw, ${60*v}px)`;
-  };
-  const applyDensity = (v) => {
-    document.querySelectorAll('.section').forEach(s => {
-      s.style.paddingTop = `${140*v}px`;
-      s.style.paddingBottom = `${140*v}px`;
-    });
-    document.querySelector('.hero').style.paddingBottom = `${140*v}px`;
-  };
-  const applyStrip = (v) => {
-    const s = document.querySelector('.strip');
-    if (s) s.style.display = v === 'hide' ? 'none' : '';
-  };
-
-  document.getElementById('t-headline').addEventListener('change', e => applyHeadline(e.target.value));
-  document.getElementById('t-scale').addEventListener('input', e => applyScale(parseFloat(e.target.value)));
-  document.getElementById('t-density').addEventListener('input', e => applyDensity(parseFloat(e.target.value)));
-  document.getElementById('t-strip').addEventListener('change', e => applyStrip(e.target.value));
-
-  /* Edit mode protocol */
-  window.addEventListener('message', (ev) => {
-    const d = ev.data || {};
-    if (d.type === '__activate_edit_mode') tweaks.classList.add('is-open');
-    if (d.type === '__deactivate_edit_mode') tweaks.classList.remove('is-open');
-  });
-  tweaksClose.addEventListener('click', () => {
-    tweaks.classList.remove('is-open');
-    try { window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*'); } catch(e){}
-  });
-  try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch(e){}
 </script>
 </body>
 </html>
