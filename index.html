@@ -67,7 +67,7 @@
     display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:32px;
   }
   .logo{ display:flex; flex-direction:column; line-height:1.1; }
-  .logo__name{ font-family:var(--font-display); font-weight:700; font-size:17px; letter-spacing:-0.01em; color:var(--ink); white-space:nowrap; }
+  .logo__name{ font-family:var(--font-display); font-weight:700; font-size:17px; letter-spacing:-0.01em; color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .logo__sub{ font-size:13px; color:var(--mute); font-weight:400; letter-spacing:0.01em; margin-top:2px; }
   .nav__rule{ height:1px; background:var(--ink); opacity:0.85; margin:0 12px; }
   .nav__links{ display:flex; align-items:center; gap:28px; }
@@ -323,12 +323,14 @@
     .nav__rule{ display:none; }
     .logo__sub{ display:block; font-size:11px; }
     .logo__name{ font-size:15px; }
-    .logo{ min-width:0; overflow:hidden; }
+    .logo{ min-width:0; }
     .nav__toggle{ display:inline-flex; }
     .nav__links{
       position:fixed; top:var(--nav-h); right:0; left:0; flex-direction:column; align-items:flex-start; gap:0;
       background:var(--paper); border-bottom:1px solid var(--hair); padding:8px var(--gutter) 24px;
       transform:translateY(-12px); opacity:0; pointer-events:none; transition:opacity .25s ease, transform .25s ease;
+      max-height:calc(100vh - var(--nav-h)); max-height:calc(100dvh - var(--nav-h));
+      overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain;
     }
     .nav__links.is-open{ opacity:1; transform:translateY(0); pointer-events:auto; }
     .nav__link{ width:100%; padding:18px 0; font-family:var(--font-display); font-weight:700; font-size:21px; letter-spacing:-0.01em; border-bottom:1px solid var(--hair-soft); }
