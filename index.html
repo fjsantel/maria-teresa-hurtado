@@ -432,7 +432,7 @@
           <div class="hero__figure reveal">
             <div class="hero__figure-frame">
               <video class="hero__figure-img" src="images/humano2low.mp4" poster="images/hero-figura.png"
-                     autoplay muted loop playsinline aria-label="Figura humana abstracta en tonos cálidos que evoca la integración entre cuerpo y mente"></video>
+                     autoplay muted loop playsinline webkit-playsinline preload="auto" aria-label="Figura humana abstracta en tonos cálidos que evoca la integración entre cuerpo y mente"></video>
             </div>
           </div>
         </div>
@@ -542,7 +542,7 @@
         <div class="enfoque__grid reveal">
           <div class="enfoque__media">
             <video class="enfoque__img enfoque__video" src="images/Ondas.mp4" poster="images/ic-sonido.png"
-                   autoplay muted loop playsinline aria-label="Ondas en movimiento que evocan la regulación del sistema nervioso"></video>
+                   autoplay muted loop playsinline webkit-playsinline preload="auto" aria-label="Ondas en movimiento que evocan la regulación del sistema nervioso"></video>
           </div>
           <div class="enfoque__body">
             <div class="eyebrow">El cuerpo en la terapia</div>
@@ -809,19 +809,22 @@
 
   /* ---------- Respeta reduce-motion en los videos decorativos ---------- */
   const decoVids = document.querySelectorAll('.hero__figure-img, .enfoque__video');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   decoVids.forEach(vid => {
     if (vid.tagName !== 'VIDEO') return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      vid.removeAttribute('autoplay');
-      vid.pause();
-    } else {
-      const tryPlay = () => vid.play().catch(() => {});
-      tryPlay();
-      ['touchstart','scroll','click'].forEach(evt =>
-        document.addEventListener(evt, tryPlay, { once:true, passive:true })
-      );
+    if (reduceMotion) { vid.removeAttribute('autoplay'); vid.pause(); return; }
+    vid.muted = true; vid.defaultMuted = true; vid.setAttribute('muted',''); vid.playsInline = true;
+    const tryPlay = () => { const p = vid.play(); if (p && p.catch) p.catch(() => {}); };
+    vid.addEventListener('loadeddata', tryPlay);
+    vid.addEventListener('canplay', tryPlay);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? tryPlay() : vid.pause()), { threshold:0.25 }).observe(vid);
     }
+    try { vid.load(); } catch(e) {}
+    tryPlay();
   });
+  const kick = () => decoVids.forEach(v => { if (v.tagName === 'VIDEO' && !reduceMotion) { const p = v.play(); if (p && p.catch) p.catch(()=>{}); } });
+  ['touchstart','click','scroll'].forEach(evt => document.addEventListener(evt, kick, { once:true, passive:true }));
 
   /* ---------- Reveal on scroll ---------- */
   const io = new IntersectionObserver((entries) => {
