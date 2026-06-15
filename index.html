@@ -210,7 +210,7 @@
   .enfoque{ background:var(--wash); }
   .enfoque__grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:24px; align-items:start; }
   .enfoque__media{ grid-column:1 / span 5; position:relative; }
-  .enfoque__img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:24px; box-shadow:0 24px 60px -28px rgba(120,90,70,0.5); }
+  .enfoque__img{ display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:24px; box-shadow:0 24px 60px -28px rgba(120,90,70,0.5); background:#e9e2da; }
   .enfoque__body{ grid-column:7 / span 6; display:flex; flex-direction:column; gap:26px; }
   .enfoque__lede{
     font-family:var(--font-display); font-weight:600; font-size:clamp(20px,2vw,26px);
@@ -541,7 +541,8 @@
       <div class="container">
         <div class="enfoque__grid reveal">
           <div class="enfoque__media">
-            <img class="enfoque__img" src="images/ic-sonido.png" alt="Ondas que evocan la regulación del sistema nervioso">
+            <video class="enfoque__img enfoque__video" src="images/Ondas.mp4" poster="images/ic-sonido.png"
+                   autoplay muted loop playsinline aria-label="Ondas en movimiento que evocan la regulación del sistema nervioso"></video>
           </div>
           <div class="enfoque__body">
             <div class="eyebrow">El cuerpo en la terapia</div>
@@ -806,20 +807,21 @@
     });
   });
 
-  /* ---------- Respeta reduce-motion en el video del hero ---------- */
-  const heroVid = document.querySelector('.hero__figure-img');
-  if (heroVid && heroVid.tagName === 'VIDEO') {
+  /* ---------- Respeta reduce-motion en los videos decorativos ---------- */
+  const decoVids = document.querySelectorAll('.hero__figure-img, .enfoque__video');
+  decoVids.forEach(vid => {
+    if (vid.tagName !== 'VIDEO') return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      heroVid.removeAttribute('autoplay');
-      heroVid.pause();
+      vid.removeAttribute('autoplay');
+      vid.pause();
     } else {
-      const tryPlay = () => heroVid.play().catch(() => {});
+      const tryPlay = () => vid.play().catch(() => {});
       tryPlay();
       ['touchstart','scroll','click'].forEach(evt =>
         document.addEventListener(evt, tryPlay, { once:true, passive:true })
       );
     }
-  }
+  });
 
   /* ---------- Reveal on scroll ---------- */
   const io = new IntersectionObserver((entries) => {
