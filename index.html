@@ -67,7 +67,7 @@
     display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:32px;
   }
   .logo{ display:flex; flex-direction:column; line-height:1.1; }
-  .logo__name{ font-family:var(--font-display); font-weight:700; font-size:17px; letter-spacing:-0.01em; color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .logo__name{ font-family:var(--font-display); font-weight:700; font-size:17px; letter-spacing:-0.01em; color:var(--ink); white-space:nowrap; }
   .logo__sub{ font-size:13px; color:var(--mute); font-weight:400; letter-spacing:0.01em; margin-top:2px; }
   .nav__rule{ height:1px; background:var(--ink); opacity:0.85; margin:0 12px; }
   .nav__links{ display:flex; align-items:center; gap:28px; }
@@ -237,13 +237,14 @@
   }
   .bio__label span:first-child{ font-family:var(--font-display); color:var(--accent); font-weight:700; }
   .bio__portrait{ grid-column:1 / span 3; }
-  .portrait{
-    width:100%;
-    aspect-ratio:4/5;
-    object-fit:cover;
-    object-position:center 16%;
+  .portrait-frame{
+    display:inline-block; line-height:0; overflow:hidden;
     border-radius:34px;
-    box-shadow:0 24px 60px -30px rgba(120,90,70,0.5);
+    box-shadow:0 24px 60px -30px rgba(120,90,70,0.5); background:#e9e2da;
+  }
+  .portrait{
+    width:100%; aspect-ratio:4/5; border-radius:20px; object-fit:cover; display:block;
+    object-position:10% 16%;
   }
   .portrait-ph{
     width:100%; aspect-ratio:4/5; border-radius:20px;
@@ -328,18 +329,19 @@
     .logo__sub{ display:block; font-size:11px; }
     .logo__name{ font-size:15px; }
     .logo{ min-width:0; }
-    .nav__toggle{ display:inline-flex; }
+    .logo__name{ overflow:hidden; text-overflow:ellipsis; }
+    .nav__toggle{ display:inline-flex; flex:0 0 auto; }
     .nav__links{
       position:fixed; top:var(--nav-h); right:0; left:0; flex-direction:column; align-items:flex-start; gap:0;
       background:var(--paper); border-bottom:1px solid var(--hair); padding:8px var(--gutter) 24px;
-      transform:translateY(-12px); opacity:0; pointer-events:none; transition:opacity .25s ease, transform .25s ease;
       max-height:calc(100vh - var(--nav-h)); max-height:calc(100dvh - var(--nav-h));
       overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain;
+      transform:translateY(-12px); opacity:0; pointer-events:none; transition:opacity .25s ease, transform .25s ease;
     }
     .nav__links.is-open{ opacity:1; transform:translateY(0); pointer-events:auto; }
-    .nav__link{ width:100%; padding:18px 0; font-family:var(--font-display); font-weight:700; font-size:21px; letter-spacing:-0.01em; border-bottom:1px solid var(--hair-soft); }
+    .nav__link{ width:100%; padding:15px 0; font-family:var(--font-display); font-weight:700; font-size:19px; letter-spacing:-0.01em; border-bottom:1px solid var(--hair-soft); }
     .nav__link::after{ display:none; }
-    .nav__cta{ width:100%; justify-content:center; margin-top:14px; padding:15px; font-size:15px; }
+    .nav__cta{ width:100%; justify-content:center; margin-top:14px; padding:14px; font-size:15px; }
     body.nav-open{ overflow:hidden; }
 
     .hero{ padding-top:calc(var(--nav-h) + 32px); padding-bottom:56px; }
@@ -437,7 +439,7 @@
           </div>
           <div class="hero__figure reveal">
             <div class="hero__figure-frame">
-              <video class="hero__figure-img" src="images/humano2low.mp4" poster="images/hero-figura.png"
+              <video class="hero__figure-img" src="images/mente-fs.mp4" poster="images/hero-figura.png"
                      autoplay muted loop playsinline webkit-playsinline preload="auto" aria-label="Figura humana abstracta en tonos cálidos que evoca la integración entre cuerpo y mente"></video>
             </div>
           </div>
@@ -474,10 +476,11 @@
             <div class="service__body">
               <h3 class="service__title">Psicoterapia Individual</h3>
               <p class="service__desc">
-                Un proceso para quienes sienten que algo ya no calza. Pronto aparece un lugar seguro
-                donde desplegar la vulnerabilidad: se despierta el propio observador, se despierta el
-                cuerpo, se reconocen patrones automáticos y se abren nuevas posibilidades. Una escucha
-                genuina, compasiva y sin juicio.
+                Un espacio seguro para detenerte, escucharte y comprender con mayor profundidad lo
+                que estás viviendo. A través de una escucha genuina, compasiva y sin juicio, se
+                fomenta la autoobservación, la conexión con el cuerpo y el reconocimiento de patrones
+                que pueden estar limitando tu bienestar, abriendo nuevas posibilidades de cambio,
+                crecimiento y transformación.
               </p>
               <div class="service__tags">
                 <span class="tag">Individual</span>
@@ -492,10 +495,11 @@
             <div class="service__body">
               <h3 class="service__title">Trabajo Somático · Somatic Experiencing®</h3>
               <p class="service__desc">
-                Las experiencias difíciles también se alojan en el cuerpo, que a veces sigue
-                funcionando como si el peligro continuara presente. A través del trabajo somático
-                acompañamos al sistema nervioso a salir de la alerta, de a poco y de forma segura,
-                recuperando presencia y capacidad de respuesta.
+                Las experiencias difíciles pueden dejar huellas en el cuerpo y en el sistema
+                nervioso. En ocasiones, este permanece en estado de alerta incluso cuando la
+                situación ya ha pasado. A través del trabajo somático exploramos las sensaciones
+                corporales y los recursos internos para apoyar la regulación del sistema nervioso,
+                recuperando gradualmente la sensación de seguridad, presencia y bienestar.
               </p>
               <div class="service__tags">
                 <span class="tag">Sistema nervioso</span>
@@ -510,9 +514,12 @@
             <div class="service__body">
               <h3 class="service__title">Crisis y Transiciones</h3>
               <p class="service__desc">
-                Acompañamiento en duelos, rupturas, maternidad, cambios laborales, cambio de país
-                o enfermedad — momentos que requieren sostén y reorganización interna. Mi formación
-                en trauma es un aliado clave para sostener estos procesos con seguridad y a tu ritmo.
+                Los momentos de cambio pueden desafiar nuestro equilibrio y nuestra forma habitual
+                de estar en el mundo. Duelos, rupturas, maternidad, cambios laborales, migración o
+                enfermedad son experiencias que muchas veces requieren un espacio de apoyo y
+                acompañamiento. Desde una mirada informada en trauma, ofrezco un espacio seguro para
+                transitar estos procesos a tu ritmo, favoreciendo la integración, la resiliencia y el
+                bienestar.
               </p>
               <div class="service__tags">
                 <span class="tag">Contención</span>
@@ -527,9 +534,13 @@
             <div class="service__body">
               <h3 class="service__title">Vínculos y Relaciones</h3>
               <p class="service__desc">
-                Trabajo individual sobre patrones relacionales, apego y familia de origen — desde tu
-                propia historia hacia el vínculo actual, incluida la pareja. No es terapia de pareja:
-                es un espacio para entender y transformar tu manera de vincularte.
+                La forma en que nos vinculamos con los demás y con nosotros mismos se va construyendo
+                a lo largo de la vida. En este proceso influyen nuestras experiencias de apego, la
+                historia relacional y familiar, las vivencias significativas, nuestras creencias y
+                la organización del mundo interno, así como el contexto sociocultural en el que nos
+                desarrollamos. Este espacio está orientado a la comprensión de los propios vínculos,
+                promoviendo mayor conciencia sobre los patrones relacionales, regulación emocional y
+                libertad en la forma de relacionarse contigo mismo y con los demás.
               </p>
               <div class="service__tags">
                 <span class="tag">Individual</span>
@@ -547,24 +558,28 @@
       <div class="container">
         <div class="enfoque__grid reveal">
           <div class="enfoque__media">
-            <video class="enfoque__img enfoque__video" src="images/Ondas.mp4" poster="images/ic-sonido.png"
+            <video class="enfoque__img enfoque__video" src="images/Ondas-fs.mp4" poster="images/ic-sonido.png"
                    autoplay muted loop playsinline webkit-playsinline preload="auto" aria-label="Ondas en movimiento que evocan la regulación del sistema nervioso"></video>
           </div>
           <div class="enfoque__body">
             <div class="eyebrow">El cuerpo en la terapia</div>
             <h2 class="enfoque__lede" id="enf-title">
-              La regulación no está en tu pensamiento: está en tu capacidad de percibir tu estado interno.
+              La regulación no ocurre únicamente en el pensamiento; surge de nuestra capacidad para percibir y comprender el estado interno del cuerpo.
             </h2>
             <p class="enfoque__para">
-              No se trata de forzar procesos, sino de acompañar al sistema nervioso a recuperar
-              seguridad, presencia y capacidad de respuesta. Se aprende conciencia corporal —
-              registrar lo que sucede en el cuerpo aquí y ahora. Es cuando el cuerpo se siente
-              seguro que volvemos a fluir, sosteniendo de manera más adaptativa lo que vivimos.
+              No se trata de forzar procesos ni de controlar lo que sentimos, sino de acompañar al
+              sistema nervioso para que recupere una sensación de seguridad, presencia y capacidad de
+              respuesta. Este proceso implica desarrollar conciencia corporal, observar y registrar
+              lo que sucede en el cuerpo aquí y ahora. Cuando el cuerpo se siente seguro, recuperamos
+              la capacidad de fluir con mayor naturalidad y de sostener nuestras experiencias de una
+              manera más adaptativa, flexible y saludable.
             </p>
             <p class="enfoque__pull">
-              «El trauma no es lo que te pasó, es lo que pasó dentro de ti como resultado de lo que
-              te pasó.» <span>Cualquier experiencia que para ti fue demasiado, muy intensa o muy
-              rápida puede ser constitutiva de trauma.</span>
+              «El trauma no es únicamente lo que te ocurrió, sino lo que sucedió dentro de ti como
+              consecuencia de esa experiencia.» <span>Cualquier situación que hayas vivido como
+              demasiado abrumadora, intensa o repentina puede convertirse en una experiencia
+              traumática. Lo determinante no es solo el hecho en sí, sino la forma en que tu
+              organismo y tu mundo emocional lo procesaron y respondieron a él.</span>
             </p>
             <div class="signs">
               <div class="signs__k">Señales con las que muchas personas se identifican</div>
@@ -585,32 +600,42 @@
           <div class="bio__label" id="bio-title"><span>02</span><span>Bio</span></div>
 
           <div class="bio__portrait">
-            <img class="portrait" src="images/retrato.jpg" alt="María Teresa Hurtado Bunster"
-                 onerror="this.outerHTML='&lt;div class=&quot;portrait-ph&quot;&gt;&lt;b&gt;Tu foto aquí&lt;/b&gt;&lt;small&gt;Sube images/retrato.jpg para mostrar tu retrato&lt;/small&gt;&lt;/div&gt;'">
+            <div class="portrait-frame">
+              <img class="portrait" src="images/retrato.webp" alt="María Teresa Hurtado Bunster"
+                   onerror="this.outerHTML='&lt;div class=&quot;portrait-ph&quot;&gt;&lt;b&gt;Tu foto aquí&lt;/b&gt;&lt;small&gt;Sube images/retrato.webp para mostrar tu retrato&lt;/small&gt;&lt;/div&gt;'">
+            </div>
           </div>
 
           <div class="bio__body">
             <p class="bio__lede">
-              Soy psicóloga clínica. Mi trabajo se construye sobre la confianza, la escucha atenta
-              y un enfoque integrativo que incluye el cuerpo como parte del proceso.
+              Soy psicóloga clínica y acompaño a personas que buscan comprender lo que les ocurre,
+              atravesar momentos difíciles o generar cambios significativos en sus vidas.
             </p>
             <p class="bio__para">
-              Desde los 15 años supe que quería estudiar psicología — me movía el deseo de ayudar a
-              otros y una curiosidad profunda por lo transformador. Con los años entendí que era
-              también una mezcla de sensibilidad, de las partes difíciles de mi propia historia y de
-              unas ganas enormes de aprender de lo profundo.
+              Mi trabajo se basa en la confianza, la escucha atenta y un enfoque integrativo que
+              considera al cuerpo como una parte esencial del proceso terapéutico. Entiendo que
+              muchas de nuestras experiencias, emociones y formas de relacionarnos no solo se
+              expresan en las palabras, sino también en cómo las vivimos corporalmente.
             </p>
             <p class="bio__para">
-              Mi estilo es cercano y acogedor, pero también directo. Acompaño el ritmo de quien
-              consulta sin perder de vista aquello que lo trajo, abierta a lo que vaya surgiendo.
-              Trabajo con el cuerpo, entro con curiosidad, y aparecen también el humor y la
-              psicoeducación cuando son pertinentes.
+              Desde muy joven supe que quería dedicarme a la Psicología. Lo que comenzó como un
+              deseo de ayudar a otros se transformó con los años en una profunda fascinación por la
+              experiencia humana y por los procesos de cambio y transformación.
             </p>
             <p class="bio__para">
-              Creo en una clínica honesta: el cambio no es llegar a un estado sin problemas, sino
-              recuperar la propia capacidad de autorregulación — poder vivir la experiencia sin
-              quedar atrapada en ella. Esa regulación no siempre está en la historia; también está
-              en el cuerpo.
+              Mi estilo es cercano, acogedor y directo. Acompaño el ritmo de cada persona sin perder
+              de vista aquello que la motivó a consultar, manteniéndome abierta a lo que vaya
+              surgiendo en el camino. Trabajo desde la curiosidad y la atención a lo que emerge en
+              cada encuentro. A veces eso implica detenernos en lo que el cuerpo está comunicando;
+              otras, encontrar nuevas formas de comprender lo que estás viviendo.
+            </p>
+            <p class="bio__para">
+              Creo que la terapia no busca eliminar por completo el malestar ni alcanzar una versión
+              ideal de nosotros mismos. Más bien, se trata de desarrollar una mayor capacidad para
+              habitar nuestras experiencias, comprenderlas y responder a ellas con mayor
+              flexibilidad. Esa capacidad no se encuentra únicamente en la historia que contamos
+              sobre nosotros mismos; también habita en el cuerpo y en la forma en que aprendemos a
+              relacionarnos con nuestras experiencias.
             </p>
           </div>
 
@@ -659,9 +684,18 @@
             <div class="faq__item">
               <p class="faq__q">¿Cómo es una primera sesión?</p>
               <p class="faq__a">
-                Es un primer encuentro para empezar a conocernos. Podrás compartir qué te trae a este
-                espacio y, sobre todo, sentir por ti mismo/a si es un lugar donde te sientes cómodo/a
-                para iniciar un proceso. Sin compromiso.
+                La primera sesión es un espacio para conocernos. Podrás compartir qué te trae a
+                consulta, qué te gustaría trabajar y cualquier duda que tengas sobre el proceso
+                terapéutico.
+              </p>
+              <p class="faq__a">
+                También es una oportunidad para que puedas sentir cómo es estar en este espacio y si
+                te resulta un lugar donde te sientes cómodo/a para comenzar un proceso. Más que una
+                evaluación, es un primer encuentro para explorar si podemos trabajar juntos/as.
+              </p>
+              <p class="faq__a">
+                No es necesario que llegues con todo claro ni que sepas exactamente por dónde
+                empezar. Podemos ir construyéndolo en conjunto.
               </p>
             </div>
             <div class="faq__item">
@@ -674,16 +708,25 @@
             <div class="faq__item">
               <p class="faq__q">¿Cómo sé si un psicólogo es adecuado para mí?</p>
               <p class="faq__a">
-                Que sea alguien recomendado ayuda, pero la mayor respuesta la tienes tú: cómo te
-                sientes en ese espacio terapéutico. La recomendación y tu propia sensación son los
-                principales filtros.
+                Que alguien llegue recomendado puede ser un buen punto de partida, pero la respuesta
+                más importante la tienes tú: cómo te sientes en ese espacio.
+              </p>
+              <p class="faq__a">
+                Un proceso terapéutico se construye desde la confianza y el vínculo. Es importante
+                sentir que puedes ser tú mismo/a, que hay escucha, respeto y un espacio donde puedas
+                explorar lo que te ocurre a tu propio ritmo.
+              </p>
+              <p class="faq__a">
+                La recomendación puede abrir una puerta, pero tu propia experiencia en las primeras
+                sesiones será la mejor guía para saber si este es un lugar donde quieres continuar.
               </p>
             </div>
             <div class="faq__item">
               <p class="faq__q">¿Atiendes presencial u online?</p>
               <p class="faq__a">
-                Ambos. Las sesiones presenciales son en Las Condes (Metro Escuela Militar),
-                preferentemente en la mañana; las tardes las reservo para sesiones online en todo Chile.
+                Ambos. Las sesiones presenciales son en la comuna de Las Condes (Metro Escuela
+                Militar); las sesiones online están disponibles en todo Chile. Coordinamos juntos el
+                horario que mejor te acomode.
               </p>
             </div>
           </div>
@@ -716,7 +759,7 @@
           <aside class="contact__aside">
             <div class="contact__row">
               <span class="contact__k">Sesión</span>
-              <span class="contact__v">60 minutos</span>
+              <span class="contact__v">60 minutos<small>Individual · presencial u online</small></span>
             </div>
             <div class="contact__row">
               <span class="contact__k">Consulta</span>
@@ -724,7 +767,7 @@
             </div>
             <div class="contact__row">
               <span class="contact__k">Horarios</span>
-              <span class="contact__v">Presencial AM · Online PM</span>
+              <span class="contact__v">Presencial AM<small>Online PM · todo Chile</small></span>
             </div>
           </aside>
         </div>
@@ -813,23 +856,34 @@
     });
   });
 
-  /* ---------- Respeta reduce-motion en los videos decorativos ---------- */
+  /* ---------- Reproducción de videos decorativos (robusto en iOS) ---------- */
   const decoVids = document.querySelectorAll('.hero__figure-img, .enfoque__video');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   decoVids.forEach(vid => {
     if (vid.tagName !== 'VIDEO') return;
     if (reduceMotion) { vid.removeAttribute('autoplay'); vid.pause(); return; }
-    vid.muted = true; vid.defaultMuted = true; vid.setAttribute('muted',''); vid.playsInline = true;
+    // iOS exige muted como propiedad + playsinline antes de play()
+    vid.muted = true;
+    vid.defaultMuted = true;
+    vid.setAttribute('muted', '');
+    vid.playsInline = true;
     const tryPlay = () => { const p = vid.play(); if (p && p.catch) p.catch(() => {}); };
-    vid.addEventListener('loadeddata', tryPlay);
-    vid.addEventListener('canplay', tryPlay);
+    // intenta cuando haya datos suficientes
+    vid.addEventListener('loadeddata', tryPlay, { once:false });
+    vid.addEventListener('canplay', tryPlay, { once:false });
+    // reproduce sólo cuando entra en viewport (mejor para batería en móvil)
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? tryPlay() : vid.pause()), { threshold:0.25 }).observe(vid);
+      const vo = new IntersectionObserver((ents) => {
+        ents.forEach(e => { if (e.isIntersecting) tryPlay(); else vid.pause(); });
+      }, { threshold:0.25 });
+      vo.observe(vid);
     }
-    try { vid.load(); } catch(e) {}
+    // fuerza la carga e intenta de inmediato
+    try { vid.load(); } catch (e) {}
     tryPlay();
   });
-  const kick = () => decoVids.forEach(v => { if (v.tagName === 'VIDEO' && !reduceMotion) { const p = v.play(); if (p && p.catch) p.catch(()=>{}); } });
+  // último recurso: primer gesto del usuario reintenta todos
+  const kick = () => decoVids.forEach(v => { if (v.tagName === 'VIDEO' && !reduceMotion) { const p = v.play(); if (p && p.catch) p.catch(() => {}); } });
   ['touchstart','click','scroll'].forEach(evt => document.addEventListener(evt, kick, { once:true, passive:true }));
 
   /* ---------- Reveal on scroll ---------- */
