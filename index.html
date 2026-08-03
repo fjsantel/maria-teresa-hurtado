@@ -190,6 +190,7 @@
     font-size:clamp(28px,3.2vw,44px); line-height:1.1; letter-spacing:-0.02em; color:var(--ink); text-wrap:balance;
   }
   .section__title em{ font-style:normal; color:var(--mute-2); font-weight:400; }
+  .section__intro{ grid-column:4 / span 9; margin:16px 0 0; font-size:17px; line-height:1.65; color:var(--ink-soft); }
 
   /* ---------- Servicios ---------- */
   .services{ border-top:1px solid var(--hair); }
@@ -203,8 +204,6 @@
   .service__body{ display:flex; flex-direction:column; gap:13px; }
   .service__title{ font-family:var(--font-display); font-weight:700; font-size:22px; letter-spacing:-0.01em; color:var(--ink); margin:0; }
   .service__desc{ font-size:15px; line-height:1.62; color:var(--mute); margin:0; }
-  .service__tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
-  .tag{ font-size:11.5px; letter-spacing:0.03em; color:var(--ink-soft); padding:5px 11px; border:1px solid var(--hair); border-radius:999px; }
 
   /* ---------- Enfoque (cuerpo / sistema nervioso) ---------- */
   .enfoque{ background:var(--wash); }
@@ -309,7 +308,9 @@
   .footer{ background:var(--ink); color:#9b9286; padding:8px 0 44px; }
   .footer__inner{ display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; font-size:12px; letter-spacing:0.02em; border-top:1px solid rgba(244,239,232,0.12); padding-top:28px; }
   .footer__inner a:hover{ color:#F4EFE8; }
-  .footer__credit{ margin-top:18px; font-size:10.5px; letter-spacing:0.02em; color:#6E675E; }
+  .footer__credit{ margin-top:18px; font-size:10.5px; letter-spacing:0.02em; color:#6E675E; display:flex; flex-direction:column; gap:6px; }
+  .footer__credit__link{ align-self:flex-end; color:inherit; }
+  .footer__credit__link:hover{ color:#9b9286; }
   .footer__credit a{ color:inherit; }
   .footer__credit a:hover{ color:#9b9286; }
 
@@ -358,6 +359,7 @@
     .section__head{ margin-bottom:38px; }
     .section__label{ grid-column:1 / -1; margin-bottom:6px; }
     .section__title{ grid-column:1 / -1; }
+    .section__intro{ grid-column:1 / -1; }
     .services__grid{ grid-template-columns:1fr; column-gap:0; }
     .services__grid .service{ padding:30px 0 !important; border-left:0 !important; border-bottom:1px solid var(--hair) !important; }
     .services__grid .service:last-child{ border-bottom:0 !important; }
@@ -424,9 +426,8 @@
               Psicoterapia que integra <em>cuerpo, mente y emoción</em> para volver a ti.
             </h1>
             <p class="hero__lede">
-              Un espacio seguro, empático y sin juicio para quienes sienten que algo ya no calza —
-              ansiedad, autoexigencia, crisis, trauma o el deseo de conocerse más profundamente.
-              Trabajo desde una mirada integrativa que incluye el cuerpo como vía de regulación y cambio.
+              Trabajo desde una mirada integrativa que considera al cuerpo, la mente y las emociones
+              como caminos para recuperar el equilibrio, ampliar la capacidad de regulación y volver a ti.
             </p>
             <div class="hero__cta-row">
               <a class="btn btn--wa" href="https://wa.me/56982349282?text=Hola%20Tere%2C%20me%20gustar%C3%ADa%20agendar%20una%20primera%20sesi%C3%B3n." target="_blank" rel="noopener">
@@ -469,87 +470,63 @@
         <header class="section__head reveal">
           <div class="section__label"><span>01</span><span>Servicios</span></div>
           <h2 class="section__title" id="serv-title">
-            Cuatro maneras de acompañarte — <em>todas desde una escucha con cuerpo y presencia.</em>
+            Psicoterapia que integra <em>cuerpo, mente y emoción</em> para volver a ti.
           </h2>
+          <p class="section__intro">
+            Una psicoterapia integrativa que se adapta a tu historia y a tus necesidades, integrando
+            cuerpo, emociones, vínculos y sistema nervioso. Estas son algunas de las áreas que solemos
+            trabajar. Te comparto algunas dimensiones que exploramos en el trabajo terapéutico:
+          </p>
         </header>
 
         <div class="services__grid">
           <article class="service reveal">
             <img class="service__icon" src="images/ic-individual.png" alt="">
             <div class="service__body">
-              <h3 class="service__title">Psicoterapia Individual</h3>
+              <h3 class="service__title">Cuerpo y sistema nervioso</h3>
               <p class="service__desc">
-                Un espacio seguro para detenerte, escucharte y comprender con mayor profundidad lo
-                que estás viviendo. A través de una escucha genuina, compasiva y sin juicio, se
-                fomenta la autoobservación, la conexión con el cuerpo y el reconocimiento de patrones
-                que pueden estar limitando tu bienestar, abriendo nuevas posibilidades de cambio,
-                crecimiento y transformación.
+                El cuerpo guarda experiencias, recursos y señales que muchas veces pasan inadvertidas.
+                Aprendemos a escucharlo para favorecer una mayor regulación, presencia y sensación de
+                seguridad. Cuando el cuerpo encuentra más seguridad, también se amplían nuestras
+                posibilidades de sentir, pensar y vincularnos.
               </p>
-              <div class="service__tags">
-                <span class="tag">Individual</span>
-                <span class="tag">60 min</span>
-                <span class="tag">Trabajo corporal</span>
-              </div>
             </div>
           </article>
 
           <article class="service reveal">
             <img class="service__icon" src="images/ic-somatico.png" alt="">
             <div class="service__body">
-              <h3 class="service__title">Trabajo Somático · Somatic Experiencing®</h3>
+              <h3 class="service__title">Emociones y mundo interno</h3>
               <p class="service__desc">
-                Las experiencias difíciles pueden dejar huellas en el cuerpo y en el sistema
-                nervioso. En ocasiones, este permanece en estado de alerta incluso cuando la
-                situación ya ha pasado. A través del trabajo somático exploramos las sensaciones
-                corporales y los recursos internos para apoyar la regulación del sistema nervioso,
-                recuperando gradualmente la sensación de seguridad, presencia y bienestar.
+                Exploramos las emociones, los pensamientos y las distintas partes que habitan en ti,
+                comprendiendo el sentido que tienen en tu historia. Conocerte de esta manera abre
+                nuevas posibilidades de relación contigo mismo y con los demás.
               </p>
-              <div class="service__tags">
-                <span class="tag">Sistema nervioso</span>
-                <span class="tag">Regulación</span>
-                <span class="tag">Trauma</span>
-              </div>
             </div>
           </article>
 
           <article class="service reveal">
             <img class="service__icon" src="images/ic-ondas.png" alt="">
             <div class="service__body">
-              <h3 class="service__title">Crisis y Transiciones</h3>
+              <h3 class="service__title">Integración de experiencias</h3>
               <p class="service__desc">
-                Los momentos de cambio pueden desafiar nuestro equilibrio y nuestra forma habitual
-                de estar en el mundo. Duelos, rupturas, maternidad, cambios laborales, migración o
-                enfermedad son experiencias que muchas veces requieren un espacio de apoyo y
-                acompañamiento. Desde una mirada informada en trauma, ofrezco un espacio seguro para
-                transitar estos procesos a tu ritmo, favoreciendo la integración, la resiliencia y el
-                bienestar.
+                Algunas experiencias pueden seguir influyendo en cómo sentimos, nos relacionamos o
+                respondemos al mundo. En terapia les damos espacio cuando es necesario, favoreciendo
+                su integración para ampliar la libertad con la que vivimos el presente. Integrar lo
+                vivido puede abrir nuevas posibilidades para el presente.
               </p>
-              <div class="service__tags">
-                <span class="tag">Contención</span>
-                <span class="tag">A tu ritmo</span>
-                <span class="tag">Trauma</span>
-              </div>
             </div>
           </article>
 
           <article class="service reveal">
             <img class="service__icon" src="images/ic-vinculos.png" alt="">
             <div class="service__body">
-              <h3 class="service__title">Vínculos y Relaciones</h3>
+              <h3 class="service__title">Vínculos y relaciones</h3>
               <p class="service__desc">
-                La forma en que nos vinculamos con los demás y con nosotros mismos se va construyendo
-                a lo largo de la vida. En este proceso influyen nuestras experiencias de apego, la
-                historia relacional y familiar, las vivencias significativas, nuestras creencias y
-                la organización del mundo interno, así como el contexto sociocultural en el que nos
-                desarrollamos. Este espacio está orientado a la comprensión de los propios vínculos,
-                promoviendo mayor conciencia sobre los patrones relacionales, regulación emocional y
-                libertad en la forma de relacionarse contigo mismo y con los demás.
+                La forma en que nos vinculamos con otros y con nosotros mismos se va construyendo a
+                partir de nuestras experiencias, nuestra historia y nuestro mundo interno. Los cambios
+                internos también pueden abrir nuevas formas de relacionarte.
               </p>
-              <div class="service__tags">
-                <span class="tag">Individual</span>
-                <span class="tag">Apego</span>
-                <span class="tag">Relacional</span>
-              </div>
             </div>
           </article>
         </div>
@@ -645,7 +622,6 @@
           <aside class="bio__facts">
             <div class="bio__fact"><span class="bio__fact-k">Atiende</span><span class="bio__fact-v">Adultos · 20+</span></div>
             <div class="bio__fact"><span class="bio__fact-k">Enfoque</span><span class="bio__fact-v">Integrativo · Somático</span></div>
-            <div class="bio__fact"><span class="bio__fact-k">Idiomas</span><span class="bio__fact-v">ES · EN</span></div>
           </aside>
 
           <div class="bio__sep"></div>
@@ -790,7 +766,10 @@
           <span>Las Condes, Santiago de Chile · Reg. Colegio de Psicólogos de Chile</span>
           <a href="mailto:mteresahurtado@gmail.com">mteresahurtado@gmail.com</a>
         </div>
-        <div class="footer__credit">Diseño gráfico y desarrollo web: Francisco Santelices Ariztía · <a href="https://www.franciscosantelices.cl" target="_blank" rel="noopener">www.franciscosantelices.cl</a></div>
+        <div class="footer__credit">
+          <span class="footer__credit__label">Diseño gráfico y desarrollo web: Francisco Santelices Ariztía</span>
+          <a class="footer__credit__link" href="https://www.franciscosantelices.cl" target="_blank" rel="noopener">www.franciscosantelices.cl</a>
+        </div>
       </div>
     </footer>
 
